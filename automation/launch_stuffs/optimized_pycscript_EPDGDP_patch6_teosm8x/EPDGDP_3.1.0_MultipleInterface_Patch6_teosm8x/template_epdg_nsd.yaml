@@ -1,0 +1,41 @@
+nsd:
+  nsd:
+  - description: cfw_nsd NetworkService
+    designer: TATA ELXSI
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: mgnt1-ext
+            ip-address: mme_node1_ip1
+          virtual-link-profile-id: mgmt1
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: mgnt2-ext
+            ip-address: mme_node1_ip2
+          virtual-link-profile-id: mgmt2
+        vnfd-id: mme_cp_node1
+      - id: '2'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '2'
+            constituent-cpd-id: mgnt1-ext
+            ip-address: sgw_tcs_cp_node1_ip1
+          virtual-link-profile-id: mgmt1
+        vnfd-id: sgw_tcs_cp_node1_vnfd
+    id: cfw_nsd
+    name: cfw_nsd
+    version: '1.0'
+    virtual-link-desc:
+    - id: mgmt1
+      mgmt-network: 'true'
+      vim-network-name: provider1
+    - id: mgmt2
+      vim-network-name: provider2
+    vnfd-id:
+    - mme_cp_node1
+    - sgw_tcs_cp_node1_vnfd
+

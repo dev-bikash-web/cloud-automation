@@ -1,0 +1,20 @@
+2026-08-13 10:12:42 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-13 10:12:42 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-13 10:12:42 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-13 10:12:45 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-13 10:12:45 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-13 10:12:48 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-13 10:12:48 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-13 10:12:48 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/new_test'[0m
+2026-08-13 10:12:48 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/new_test' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-13 10:12:48 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/new_test' && test -d '/home/cdot/CFW/new_test'[0m
+2026-08-13 10:12:49 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-13 10:12:49 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/new_test' on CLOUD_CLI.[0m
+2026-08-13 10:12:49 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-13 10:12:49 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-13 10:12:49 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-13 10:12:49 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/Automation/automation_node_launch/launch_stuffs/NFV' -> '/home/cdot/CFW/new_test/NFV'...[0m
+2026-08-13 10:12:56 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/Automation/automation_node_launch/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/new_test/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-13 10:13:07 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-13 10:13:07 - [INFO] - [test_04_verify_cloud_md5] [96mClosed connection to CLOUD_CLI[0m
+2026-08-13 10:13:07 - [INFO] - [test_04_verify_cloud_md5] [96mClosed connection to TEOSM_CLI[0m

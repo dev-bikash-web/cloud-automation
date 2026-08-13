@@ -1,0 +1,123 @@
+tosca_definitions_version: tosca_simple_profile_for_nfv_1_0_0 
+
+description : CFW_NFV_BASE_SUB_PATH/CFW_NFV_CONTROLLER_DIR/NFV/generated_vnf_ns/ns_param.yaml  
+
+metadata:
+  template_name: CFW-Node1-Template 
+
+############################
+
+node_types:
+  tosca.nodes.nfv.CFW1:
+    capabilities:
+      forwarder1:
+        type: tosca.capabilities.nfv.Forwarder
+
+############################
+topology_template:
+  inputs:
+    my_ip:
+      type: string
+      description: IP Address
+      default: $my_ip
+    my_network:
+      type: string
+      description: Network Name
+      default: $my_network
+    my_ctrl_network:
+      type: string
+      description: Control Network Name
+      default: $my_ctrl_network
+    my_zone:
+      type: string
+      description: Zone Name
+      default: $my_zone
+    my_flavor:
+      type: string
+      description: Flavor Name
+      default: $my_flavor
+    my_hostname:
+      type: string
+      description: Hostname of the Virtual Network Function.
+      default: $my_hostname
+    my_image:
+      type: string
+      description: Image of the Virtual Network Function.
+      default: $my_image
+
+  substitution_mappings:
+    node_type: tosca.nodes.nfv.CFW1
+    capabilities:
+      forwarder1: [CP1, forwarder]
+      forwarder2: [CP2, forwarder]
+
+  node_templates:
+    VDU1:
+      type: tosca.nodes.nfv.VDU.Tacker
+      properties:
+        image: { get_input: my_image }
+        flavor: { get_input: my_flavor }
+        name: { get_input: my_hostname }
+        availability_zone: { get_input: my_zone }  
+        mgmt_driver: noop
+        monitoring_policy:
+          name: ping
+          parameters:
+            count: 3
+            interval: 100
+          actions:
+            failure: respawn
+        user_data_format: RAW
+        user_data: |
+          #!/bin/sh
+          echo "Execution of CFW Node 1 User data"
+          cd /root/
+          ssh-keyscan -t rsa CONTROLLER_IP >> /root/.ssh/known_hosts
+          sed -i -e  "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config
+          service sshd restart
+          # Fetching files. 
+          echo "Fetching files from controller."
+          lftp sftp://CONTROLLER_USER:CONTROLLER_PASSWORD@CONTROLLER_IP -e "set ftp:ssl-allow no; set xfer:clobber on; cd CFW_NFV_BASE_SUB_PATH; mget CFW_NFV_CONTROLLER_DIR/NFV/wigw_config.cfg; mget CFW_NFV_CONTROLLER_DIR/NFV/configure_cfw.sh; mget CFW_NFV_CONTROLLER_DIR/NFV/replacevars.sh; mget CFW_NFV_CONTROLLER_DIR/NFV/helper.sh; mget CFW_NFV_CONTROLLER_DIR/NFV/auto_config.py; bye"
+          chmod +x replacevars.sh
+          echo "Replacing tags in CFW 1 configuration file (configure_cfw.sh)."
+          ./replacevars.sh 275 "cfw"
+          chmod +x configure_cfw.sh
+          echo "Executing configure_cfw.sh"
+          ./configure_cfw.sh
+
+    CP1:
+      type: tosca.nodes.nfv.CP.Tacker
+      properties:
+        management: true
+        order: 0
+        anti_spoofing_protection: true
+        ip_address: { get_input: my_ip }
+        security_groups: 
+          - CFW_SECURITY_GROUP 
+      requirements: 
+        - virtualBinding: 
+            node: VDU1 
+        - virtualLink: 
+            node: VL1 
+
+    CP2:
+      type: tosca.nodes.nfv.CP.Tacker
+      properties:
+        order: 1
+      requirements:
+        - virtualBinding:
+            node: VDU1
+        - virtualLink:
+            node: VL2
+
+    VL1: 
+      type: tosca.nodes.nfv.VL 
+      properties: 
+        network_name: { get_input: my_network }  
+        vendor: Tacker 
+
+    VL2: 
+      type: tosca.nodes.nfv.VL 
+      properties: 
+        network_name: { get_input: my_ctrl_network }  
+        vendor: Tacker 

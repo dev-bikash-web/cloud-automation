@@ -1,0 +1,13 @@
+CLOUD_CLI=cdot@172.23.1.50
+CLOUD_CLI_Password=Cdot@1234
+TEOSM_CLI=bsnladmin@172.23.9.10
+TEOSM_CLI_Password=bsnl@123
+TEOSM_CLI_OPTI_FOLDER=/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x
+CLOUD_GUI=ssh -L 9999:172.23.1.10:80 cdot@192.168.129.40
+TEOSM_GUI=ssh -L 9998:172.23.9.10:32000 cdot@192.168.129.40
+GUI_CLI_PASS=Val@1984$
+CLOUD_NFV_FOLDER=/home/cdot/CFW/new_test
+LOCAL_FOLDER=/home/bikash/workera/repository/automation_node_launch/launch_stuffs
+IMAGE_NAME=EPDGDP-3.1.0_automation
+CFG_FILE_NAME=wigw_config.cfg
+TEOSM_INSTANCE_NAME=epdg_dp_node11

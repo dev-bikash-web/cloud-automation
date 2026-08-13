@@ -1,0 +1,237 @@
+{
+        "vnf_node": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "vnf_node_vnfd",
+                        "vnfName": "vnf_node_vnfd",
+                        "vnfShortName": "vnf_node_vnfd",
+                        "vnfDesc": "vnf_node VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "vnf_node_vnfd-VM",
+                        "vduName": "vnf_node_vnfd-VM",
+                        "vduDesc": "vnf_node_vnfd-VM",
+                        "myVNF": "cfw",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "vnf_node_IP": "10.253.8.12",
+                        "nwkName": "provider111-253-1"
+                }
+        },
+        "cfw": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "cfw_vnfd",
+                        "vnfName": "cfw_vnfd",
+                        "vnfShortName": "cfw_vnfd",
+                        "vnfDesc": "cfw VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "cfw_vnfd-VM",
+                        "vduName": "cfw_vnfd-VM",
+                        "vduDesc": "cfw_vnfd-VM",
+                        "myVNF": "cfw",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "cfw_IP1": "IP",
+                        "nwkName1": "provider111-253-1",
+                        "firewall_node10_IP1": "10.253.8.12",
+                        "firewall_node10_IP2": "10.253.8.13",
+                        "nwkName2": "provider"
+                }
+        },
+        "cfw_node1": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "cfw_node1_vnfd",
+                        "vnfName": "cfw_node1_vnfd",
+                        "vnfShortName": "cfw_node1_vnfd",
+                        "vnfDesc": "cfw_node1 VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "cfw_node1_vnfd-VM",
+                        "vduName": "cfw_node1_vnfd-VM",
+                        "vduDesc": "cfw_node1_vnfd-VM",
+                        "myVNF": "cfw_node1",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "cfw_node1_IP1": "IP",
+                        "nwkName1": "provider111-253-1",
+                        "firewall_node10_IP1": "10.253.8.12",
+                        "firewall_node10_IP2": "0.0.0.0",
+                        "nwkName2": "provider"
+                }
+        },
+        "cfw_ha_node1": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "cfw_ha_node1_vnfd",
+                        "vnfName": "cfw_ha_node1_vnfd",
+                        "vnfShortName": "cfw_ha_node1_vnfd",
+                        "vnfDesc": "cfw_ha_node1 VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "cfw_ha_node1_vnfd-VM",
+                        "vduName": "cfw_ha_node1_vnfd-VM",
+                        "vduDesc": "cfw_ha_node1_vnfd-VM",
+                        "myVNF": "cfw_ha_node1",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "cfw_ha_node1_IP1": "IP",
+                        "nwkName1": "VLAN469",
+                        "firewall_node10_IP1": "172.27.69.41",
+                        "firewall_node10_IP2": "172.27.69.42",
+                        "nwkName2": "VLAN468"
+                }
+        },
+        "cfwdpi_node1": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "cfwdpi_node1_vnfd",
+                        "vnfName": "cfwdpi_node1_vnfd",
+                        "vnfShortName": "cfwdpi_node1_vnfd",
+                        "vnfDesc": "cfwdpi_node1 VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "cfwdpi_node1_vnfd-VM",
+                        "vduName": "cfwdpi_node1_vnfd-VM",
+                        "vduDesc": "cfwdpi_node1_vnfd-VM",
+                        "myVNF": "cfwdpi_node1",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "cfwdpi_node1_IP1": "IP",
+                        "nwkName1": "provider111-253-1",
+                        "firewall_node10_IP1": "10.253.8.12",
+                        "firewall_node10_IP2": "0.0.0.0"
+                }
+        },
+        "cfwlac_node1": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "cfwlac_node1_vnfd",
+                        "vnfName": "cfwlac_node1_vnfd",
+                        "vnfShortName": "cfwlac_node1_vnfd",
+                        "vnfDesc": "cfwlac_node1 VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "cfwlac_node1_vnfd-VM",
+                        "vduName": "cfwlac_node1_vnfd-VM",
+                        "vduDesc": "cfwlac_node1_vnfd-VM",
+                        "myVNF": "cfwlac_node1",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "cfwlac_node1_IP1": "IP",
+                        "nwkName1": "provider111-253-1",
+                        "firewall_node10_IP1": "10.253.8.12",
+                        "firewall_node10_IP2": "0.0.0.0",
+                        "nwkName2": "provider"
+                }
+        },
+        "epdg_dp_node1": {
+                "vnf": {
+                        "genFlag": "On",
+                        "vnfid": "epdg_dp_node1_vnfd",
+                        "vnfName": "epdg_dp_node1_vnfd",
+                        "vnfShortName": "epdg_dp_node1_vnfd",
+                        "vnfDesc": "epdg_dp_node1 VNFD package enabled with Day-0 and Service Assurance",
+                        "vduid": "epdg_dp_node1_vnfd-VM",
+                        "vduName": "epdg_dp_node1_vnfd-VM",
+                        "vduDesc": "epdg_dp_node1_vnfd-VM",
+                        "myVNF": "epdg_dp_node1",
+                        "myHostname": "epdgdp",
+                        "CFW_NFV_BASE_SUB_PATH": "/home/cdot/CFW",
+                        "CFW_NFV_CONTROLLER_DIR": "EPDGDP",
+                        "CONTROLLER_IP": "10.45.88.196",
+                        "CONTROLLER_USER": "vivekreddy",
+                        "CONTROLLER_PASSWORD": "Tataelxsi@12345",
+                        "ADDRPAIR": "0.0.0.0/0",
+                        "USER_ENV": "/home/cdot/CFW/admin-openrc",
+                        "imageName": "epdg-2012",
+                        "vmFlavour": {
+                                "vcpuCount": "9",
+                                "memoryMb": "9",
+                                "storageGb": "9"
+                        }
+                },
+                "ns": {
+                        "epdg_dp_node1_IP1": "IP",
+                        "nwkName1": "DP172_138",
+                        "epdg_dp_node1_IP2": "IP",
+                        "nwkName2": "DP172_133",
+                        "firewall_node10_IP1": "172.23.138.14",
+                        "firewall_node10_IP2": "172.24.13.10"
+                }
+        }
+}

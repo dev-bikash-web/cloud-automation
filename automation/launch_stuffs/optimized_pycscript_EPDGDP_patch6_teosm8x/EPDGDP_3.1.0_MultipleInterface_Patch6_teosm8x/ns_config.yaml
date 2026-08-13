@@ -1,0 +1,13 @@
+vnf:
+  - member-vnf-index: "vnf"
+    vdu:
+      - id: hackfest_basic-VM
+        vim-flavor-id: "O1.medium" #FLAVOR_NAME
+        instance_name:
+        security-group-id: "sample_id"
+
+additionalParamsForVnf:
+  - member-vnf-index: "1"
+    additionalParams:
+      build_near_host_ip: 10.45.45.66
+      cidr: "/32"

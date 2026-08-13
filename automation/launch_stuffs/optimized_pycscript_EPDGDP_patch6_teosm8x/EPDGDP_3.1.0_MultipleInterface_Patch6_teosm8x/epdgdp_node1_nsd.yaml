@@ -1,0 +1,31 @@
+nsd:
+  nsd:
+  - description: epdgdp_node1_nsd Network Service
+    designer: TATA ELXSI
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        vnfd-id: epdg_dp_node1_vnfd
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: mgnt1-ext
+            ip-address: firewall_node10_IP1
+          virtual-link-profile-id: mgmt1
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: mgnt2-ext
+            ip-address: firewall_node10_IP2
+          virtual-link-profile-id: mgmt2
+    id: epdgdp_node1_nsd
+    name: epdgdp_node1_nsd
+    version: '1.0'
+    virtual-link-desc:
+    - id: mgmt1
+      mgmt-network: 'true'
+      vim-network-name: nwkName1
+    - id: mgmt2
+      vim-network-name: nwkName2
+    vnfd-id:
+    - epdg_dp_node1_vnfd

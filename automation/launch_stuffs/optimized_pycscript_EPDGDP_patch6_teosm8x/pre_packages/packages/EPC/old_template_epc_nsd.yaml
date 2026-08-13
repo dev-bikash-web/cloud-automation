@@ -1,0 +1,114 @@
+# Copyright 2019 ETSI OSM
+#
+# All Rights Reserved.
+#
+#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+#    not use this file except in compliance with the License. You may obtain
+#    a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+nsd-catalog:
+    schema-version: "v3.0"
+    nsd:
+    -   id: epc_nsd
+        name: epc_nsd
+        short-name: epc_nsd
+        vendor: TATA ELXSI
+        description: EPC Network Service
+        version: '1.0'
+
+        # Specify the VNFDs that are part of this NSD
+        constituent-vnfd:
+        # The member-vnf-index needs to be unique, starting from 1
+        # vnfd-id-ref is the id of the VNFD
+        # Multiple constituent VNFDs can be specified
+        -   member-vnf-index: "1"
+            vnfd-id-ref: mme_tcs_cp_node1_vnfd
+        -   member-vnf-index: "2"
+            vnfd-id-ref: sgw_tcs_cp_node1_vnfd
+        -   member-vnf-index: "3"
+            vnfd-id-ref: pgw_tcs_cp_node1_vnfd
+        -   member-vnf-index: "4"
+            vnfd-id-ref: pcrf_tcs_cp_node1_vnfd
+        -   member-vnf-index: "5"
+            vnfd-id-ref: mme_tcs_cp_node2_vnfd
+        -   member-vnf-index: "6"
+            vnfd-id-ref: sgw_tcs_cp_node2_vnfd
+        -   member-vnf-index: "7"
+            vnfd-id-ref: pgw_tcs_cp_node2_vnfd
+        -   member-vnf-index: "8"
+            vnfd-id-ref: pcrf_tcs_cp_node2_vnfd
+        -   member-vnf-index: "9"
+            vnfd-id-ref: sgw_tcs_dp_node1_vnfd
+        -   member-vnf-index: "10"
+            vnfd-id-ref: sgw_tcs_dp_node2_vnfd
+        -   member-vnf-index: "11"
+            vnfd-id-ref: pgw_tcs_dp_node1_vnfd
+        -   member-vnf-index: "12"
+            vnfd-id-ref: pgw_tcs_dp_node2_vnfd
+
+        # Networks for the VNFs
+        vld:
+        -   id: epc_nsd_vld0
+            name: mgmt
+            short-name: mgmt
+            type: ELAN
+            mgmt-network: true
+            vim-network-name: provider
+            vnfd-connection-point-ref:
+            -   member-vnf-index-ref: "1"
+                vnfd-id-ref: mme_tcs_cp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "2"
+                vnfd-id-ref: sgw_tcs_cp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "3"
+                vnfd-id-ref: pgw_tcs_cp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "4"
+                vnfd-id-ref: pcrf_tcs_cp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "5"
+                vnfd-id-ref: mme_tcs_cp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "6"
+                vnfd-id-ref: sgw_tcs_cp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "7"
+                vnfd-id-ref: pgw_tcs_cp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "8"
+                vnfd-id-ref: pcrf_tcs_cp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "9"
+                vnfd-id-ref: sgw_tcs_dp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "10"
+                vnfd-id-ref: sgw_tcs_dp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "11"
+                vnfd-id-ref: pgw_tcs_dp_node1_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address:
+            -   member-vnf-index-ref: "12"
+                vnfd-id-ref: pgw_tcs_dp_node2_vnfd
+                vnfd-connection-point-ref: mgnt
+                #ip-address: 
+                

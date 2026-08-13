@@ -1,0 +1,816 @@
+rm -f working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+rm -f working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+qemu-img create -f qcow2 working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 50G
+qemu-img create -f qcow2 working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 50G
+find . -name working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+find . -name working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004hHOST$ rm -f working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l[?2004hHOST$ qemu-img create -f qcow2 working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 50G
+[?2004lFormatting 'working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=53687091200 lazy_refcounts=off refcount_bits=16
+[?2004hHOST$ [?2004hHOST$ rm -f working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l[?2004hHOST$ qemu-img create -f qcow2 working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 50G
+[?2004lFormatting 'working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=53687091200 lazy_refcounts=off refcount_bits=16
+[?2004hHOST$ find . -name working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004lfind . -name working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l./working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+./working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004hHOST$ [?2004hHOST$ virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lerror: failed to get domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+
+error: failed to get domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+
+[?2004hHOST$ [?2004hHOST$ virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lerror: failed to get domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+
+error: failed to get domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+
+[?2004hHOST$ [?2004hHOST$ virt-install --name "AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid" --osinfo detect=on,require=off --ram "32768" --vcpus "10" --disk path="/tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2",size="50",format=qcow2 --cdrom "/tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso" --network none --noautoconsole
+virt-install --name "AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid" --osinfo detect=on,require=off --ram "32768" --vcpus "10" --disk path="/tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2",size="50",format=qcow2 --cdrom "/tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso" --network none --noautoconsole
+virt-install --name "AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid" --osinfo detect=on,require=off --ram "32768" --vcpus "10" --disk path="/tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2",size="50",format=qcow2 --cdrom "/tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso" --network none --noautoconsole
+[?2004lvirt-install --name "AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid" --osinfo detect=on,require=off --ram "32768" --vcpus "10" --disk path="/tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2",size="50",format=qcow2 --cdrom "/tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso" --network none --noautoconsole
+[?2004lWARNING  Using --osinfo generic, VM performance may suffer. Specify an accurate OS for optimal results.
+
+Starting install...
+WARNING  Using --osinfo generic, VM performance may suffer. Specify an accurate OS for optimal results.
+
+Starting install...
+Creating domain...                                          |    0 B  00:00     
+Creating domain...                                          |    0 B  00:00     
+
+Domain is still running. Installation may be in progress.
+You can reconnect to the console to complete the installation process.
+
+Domain is still running. Installation may be in progress.
+You can reconnect to the console to complete the installation process.
+[?2004hHOST$ [?2004hHOST$ virsh list --state-running | grep AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh list --state-running | grep AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh list --state-running | grep AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh list --state-running | grep AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004l 89   [01;31m[KAUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid[m[K   running
+ 89   [01;31m[KAUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid[m[K   running
+[?2004hHOST$ [?2004hHOST$ virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+
+virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+
+virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+[?2004lvirsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+[?2004lConnected to domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+Escape character is ^] (Ctrl + ])
+Connected to domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+Escape character is ^] (Ctrl + ])
+
+
+[   10.008577] cgroup2: Unknown parameter [   10.008577] cgroup2: Unknown parameter 'memory_recursiveprot'
+'memory_recursiveprot'
+
+Welcome to EPDGDP - t
+Welcome to EPDGDP - ttytyS0
+S0
+
+no
+node lde login: ogin: 
+
+
+nod
+node loe login:gin:tmpuser
+tmpuser
+  tmpustmpuserer
+
+Password:Password:tmppwd
+tmppwd
+export PS1='VM$ '
+export PS1='VM$ '
+ 
+ 
+export PS1=export PS1='VM$ 'VM$ 
+
+'
+'
+
+
+Welcome toWelcome to EPDGDP EPDGDP
+Ver
+Versionsion:     :      3.1 3.1.0
+.0
+DescriDescripption:  tion:  EPDGDPEPDGDP
+Li
+Linunux nox node 5.4.de 5.4.0-t0-trunkrunk-cfw-am-cfw-amd64 d64 #1 S#1 SMP PMP PREEMPT DREEMPT Debiebian 5.an 5.4.814.81-0cf-0cfw w (202(2021-061-06-16) x8-16) x86_66_644
+You ha
+You have nve no mao mail.il.
+
+[?2004htmpuser@n[?2004htmpuser@node:ode:~$ ~$ exexporport PSt PS1='VM$ 1='VM$ install image
+install image
+'
+[?2004l[?2004hVM$ 
+[?2004l[?2004hVM$ '
+[?2004l[?2004hVM$ 
+[?2004l[?2004hVM$ install iminstall image
+age
+[?2004[?2004ll
+We
+Welcome to the EPDGlcome to the EPDGDP iDP image image installnstaller.er.
+
+What wouWhat would yold you like u like to nato nameme this i this imagemage? ? 
+
+[3.1.0]: [3.1.0]: 
+
+This imagThis image wille will  be be namenamed: 3d: 3.1.0.1.0
+
+CheckiChecking drng drives ives for for prepreviouvious s conconfigurafigurations..tions....
+
+I found the follI found the following owing confconfiguraiguratiotion filn files:
+  es:
+    /  /config/config/coconfig.nfig.boot
+ boot
+    /o   /opt/vypt/vyatta/eatta/etctc/conf/config.boig.boot.deot.defaultfault
+W
+Which hich one shouone shouldld I copy? I copy?
+
+ [/config/config.boot]:  [/config/config.boot]: 
+
+
+E
+Enternter usernam username foe for admir administnistrator acrator accocount: unt: test
+test
+testtest
+
+
+Enter
+Enter passwo password ford foTest@1234
+Test@1234
+r administrator account
+Enter password for user 'test':r administrator account
+Enter password for user 'test':
+
+RetypeRetype pass passwordword for  for useruser 'tes 'test':t':Test@1234
+Test@1234
+
+
+Enter theEnter the desire desired syd system cstem consoleonsole [tt [tty0y0]: ]: 
+
+
+
+WouldWould yo you liu like ke to to setusetup ap a gr grub pasub password?sword? (Yes (Yes/No/No) [No]:) [No]:  
+
+
+
+WoulWould yod you liu like tke to eno enable aable a redu reducedced grub l grub layayouout? (Yes/t? (Yes/NoNo) [N) [No]o]: : 
+
+
+
+The vRouter The vRouter systsystem requiem requireres a s a miniminimum mum 20482048MB dMB disisk spak spacece
+o
+on a parn a parttiton tyiton type 8pe 83 (Lin3 (Linuxux). If y). If you ou wish, wish, you myou mayay als also o seset upt up
+a
+a so software Rftware RAID AID devicedevice for for the v the vRoRouter pauter partrtition.ition.
+
+ProbinProbing driveg drives: s: OK
+ThOK
+The foe followillowing drng drives wives were dere detectedetected o on your n your systemsystem:
+:
+ sda	5 sda	53687MB3687MB
+
+
+Ins
+Install ttall the imhe imagage on? [e on? [
+
+sda]:sda]:
+
+A leA legacy pargacy partititition tabon table (le (msdomsdos) suppos) supportrts drivs driveses u up top to 2 TB 2 TB
+
+GPGPT pT partitiartitionon for format smat suppoupports lrts largarger driveer drives as andnd pa partitirtitionons
+Disks
+Disk la labelbel typ type (me (msdossdos/gpt) /gpt) [gpt]:[gpt]:
+
+  
+
+Would Would you liyou like mke me to te to try to ry to partpartition ition a dra driveive a autoutomatimaticallcally
+or wy
+or wouldould yo you rau rather partther partitioition in it mant manuallually wity with h parteparted?
+d?
+
+
+PartitionPartition (Auto/Part (Auto/Parted) [Aed) [Auto]:uto]:
+
+  
+
+ValiValidatidating dng defaefaultults...s... [OK] [OK]
+
+WelcWelcomeome to th to the Ae Autoutomated Partmated Partitiition Inson Instatallerller!
+Si!
+Size of ze of BIOS_BIOS_BOOT BOOT papartitionrtition? [25? [256]: 6]: 
+
+
+
+How muHow muchch space  space would ywould youou li like to ake to allocallocate fte for thor the e vRovRouteruter par partitiontition? [534? [534
+
+06]: 06]: 
+
+SizeSize of t of the log he log partpartitioition? [n? [0]: 0]: 
+
+
+
+VaValidatilidating parng partitiontitions sizs sizes..es....[OK][OK]
+Prin
+Print fit finnal paral partititition sion sizeszes? ? (Ye(Yes/s/No) No) [N[No]: o]: 
+
+
+
+ReadReady toy to write  write partipartittioions to dins to disksk
+Continu
+Continue e (Ye(Yes/No) [s/No) [No]: No]: Yes
+Yes
+YesYes
+
+CreaCreating new ting new didisk_labesk_label on l on [sda[sda]: ]: OKOK
+
+GeGeneratinnerating boog boot t papartirtitition foron for dr drive: sive: sda
+da
+WrWritingiting pa partrtitioition to n to didisk: [sk: [sda]sda] [BIO [BIOS_PARS_PART] [T] [25256]
+6]
+Writing paWriting partition to disrtition to disk: [sdk: [sda] [a] [vRoutevRouter] [53r] [53406]406]  [ext4][ext4]
+
+Creating filesCreating filesysteystem on /m on /dev/dev/sdsda2..a2....OK
+OK
+Settling.Settling.....Done!
+Done!
+MountingMounting /dev/ /dev/sdsda2..a2...
+.
+Setting Setting up grub up grub onon / /devdev/sda/sda: : OK
+OK
+CopyingCopying squashfs squashfs ima image..ge...
+.
+Copying kernel and iCopying kernel and initrnitrd imagesd images...
+...
+Copying /config/coCopying /config/config.bonfig.boot...ot...
+
+CreatingCreating admin  admin aaccount foccount for user user [r [test]test]
+
+(Tue Aug 11 04:(Tue Aug 11 04:01:01:42:6958942:695895 25 2026) 026) [sss[sss_cache] [co_cache] [confdb_genfdb_get_dot_domainmains] (0xs] (0x000010):10):  No No ddomaiomains confins configurgured, ed, fatfatal eal errorrror!!
+Could n
+Could not ot open open availavailablable doe domainsmains
+
+(Tue Aug 1(Tue Aug 11 04:01 04:01:1:42:42:7650765033 233 2026) [026) [sssss_cas_cache]che] [c [confonfdb_gdb_get_det_domaiomains]ns] (0x0010 (0x0010)): No: No  domainsdomains con configufigured, fred, fatalatal error error!
+!
+CoCould uld not opnot open en avaiavailablable dle domaomainsins
+
+Running post-Running post-install scriinstall script...pt...
+
+Done.
+Done.
+[?2004hVM$ [?2004hVM$ 
+
+
+[?2004l
+[?2004l[?2004h[?2004hVM$ VM$ 
+[?2004hHOST$ 
+[?2004hHOST$ virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh destroy AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lDomain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' destroyed
+
+Domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' destroyed
+
+[?2004hHOST$ [?2004hHOST$ 
+
+
+[?2004l[?2004hHOST$ 
+[?2004l[?2004hHOST$ virsh start AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh start AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh start AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh start AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lDomain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' started
+
+Domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' started
+
+[?2004hHOST$ [?2004hHOST$ virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+
+virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+
+virsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+[?2004lvirsh console AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid --force
+[?2004lConnected to domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+Escape character is ^] (Ctrl + ])
+Connected to domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid'
+Escape character is ^] (Ctrl + ])
+
+Welcome to EPDGD
+Welcome to EPDGDP - ttyS0P - ttyS0
+
+
+
+nonodede lo login:gin:
+
+  
+
+nonodede  lologin:gin:test
+test
+  tetesstt
+
+Password:Password:Test@1234
+Test@1234
+export PS1='VM$ '
+export PS1='VM$ '
+ 
+ 
+exexport port PS1='VM$PS1='VM$ ' 'configure
+configure
+
+
+coconfnfigureigure
+
+Welcome to EPDGWelcome to EPDGDP
+DP
+VersVersion:ion:         3   3.1..1.0
+0
+DescDescrriptiiption: on:  EPDGDP EPDGDP
+
+LiLinux nux nodenode  5.5.4.04.0-tru-trunk-cnk-cfw-amd64fw-amd64 # #export PS1='VM# '
+export PS1='VM# '
+1 SMP PREEMPT Debian 5.4.81-0cfw (2021-06-16) x86_64
+You have no mail.
+1 SMP PREEMPT Debian 5.4.81-0cfw (2021-06-16) x86_64
+You have no mail.
+expoexport Prt PS1='S1='VM# 'VM# 'set system login user test level superuser
+set system login user test level superuser
+
+
+set set systemsystem log login uin user teser test st levelevel supl supereruseuser
+r
+[?2004htest@node:~$ export PS1='VM$ '
+[?200[?2004htest@node:~$ export PS1='VM$ '
+[?2004l4l[?2004hVM$ [?2004hVM$ configureconfigure
+
+[?2004l[?2004l[?2004h[?2004h[ed[edit]it]
+
+ttest@est@nonode# de# eexporxport t PS1='PS1='VM# VM# commit
+commit
+'
+[?2004l[?2004hVM# set system login user test level superuser
+[?2004l'
+[?2004l[?2004hVM# set system login user test level superuser
+[?2004lexit
+exit
+commit
+commit
+exiexit
+t
+[?2004h[?2004hVMVM# # commcommiitt
+
+[[?2004l?2004l[?2004hVM# [?2004hVM# exexitit
+
+[[?200?2004l4lexit
+exit
+[?2004h[?2004hVM$ VM$ logout
+logout
+logologoutut
+
+[[?20?2004l04l
+Welcome to EPDGDP - tt
+Welcome to EPDGDP - ttyS0
+
+noyS0
+
+node logide login:n:  test
+test
+testtest
+
+PassworPassword: d: Test@1234
+Test@1234
+export PS1='VM$ '
+export PS1='VM$ '
+
+
+export PSexport PS1='VM$1='VM$ ' 'sudo su
+sudo su
+
+
+sudo susudo su
+
+Welcome to EPDGDWelcome to EPDGDPP
+Version:
+Version:           3 3.1.0.1.0
+Descr
+Descriptioiption:  n:  EPDGEPDGDPDP
+Li
+Linux nonux node 5.de 5.4.04.0-trunk-trunk-cfw-cfw-am-amd64 #1 d64 #1 SMP SMP PREEMPREEMPT DePT Debian 5bian 5..4.81-0cf4.81-0cfw (w (202021-06-21-06-16)16) x8 x86_64
+6_64
+You haveYou have  no no mail.
+mail.
+[?2004htest@[?2004htest@node:~$ node:~$ exexportport PS1 PS1='VM='VM$ $ '
+[?'
+[?20042004ll[?2004[?2004hVM$hVM$  susudo sudo su
+
+[?2[?2004004ll[s[sudo] udo] passwordpassword f for tor test: est: Test@1234
+Test@1234
+
+
+[?2004h[?2004hroroot@node:ot@node:/hom/home/teste/test# # export PS1='VMSUDO# '
+export PS1='VMSUDO# '
+export export PS1=PS1='VMS'VMSUDO# 'UDO# 'grep -q "cloud-init" /boot/grub/grub.cfg || sed -i "s/linux \(.*\)/linux \1 cloud-init/" /boot/grub/grub.cfg
+grep -q "cloud-init" /boot/grub/grub.cfg || sed -i "s/linux \(.*\)/linux \1 cloud-init/" /boot/grub/grub.cfg
+
+[?2004l[?2004hVMSUDO# 
+[?2004l[?2004hVMSUDO# rm -fr /var/lib/dhcp/*
+rm -fr /var/lib/dhcp/*
+grep -q "cloud-init" /boot/grub/grub.cfg || sed -i "s/linux \(.*\)/linux \1 cloud-init/" /boot/grub/grub.cfg
+[?2004l[?2004hVMSUDO# grep -q "cloud-init" /boot/grub/grub.cfg || sed -i "s/linux \(.*\)/linux \1 cloud-init/" /boot/grub/grub.cfg
+[?2004l[?2004hVMSUDO# echo -n > /etc/machine-id
+echo -n > /etc/machine-id
+rm -fr /var/lib/dhcp/*
+[?2004l[?2004hVMSUDO# rm -fr /var/lib/dhcp/*
+[?2004l[?2004hVMSUDO# bash /opt/vyatta/sbin/exclude-if-dataplane.sh EPDG
+bash /opt/vyatta/sbin/exclude-if-dataplane.sh EPDG
+echo -n > /etc/machine-id
+[?2004l[?2004hVMSUDO# echo -n > /etc/machine-id
+[?2004l[?2004hVMSUDO# exit
+exit
+bash /opt/vyatta/sbin/exclude-if-dataplane.sh EPDG
+[?2004lModule detected: EPDG
+Starting EPDG exclude interface configuration...
+bash /opt/vyatta/sbin/exclude-if-dataplane.sh EPDG
+[?2004lModule detected: EPDG
+Starting EPDG exclude interface configuration...
+exexit
+it
+Interfaces excluded Interfaces excluded from datfrom dataplaneaplane: et: eth0,ethh0,eth1,eth41,eth4
+
+ConfConfiguriguratioation upn updadateted sud succesccessfusfullylly
+
+[?20[?2004hV04hVMSUDOMSUDO# ex# exit
+it
+[?20[?200404lleexixit
+t
+[?2[?2004hVM004hVM$ $ configure
+configure
+configuconfigure
+re
+[?20[?2004l04l[?2004h[e[?2004h[edit]
+tdit]
+test@nest@node#ode#  export PS1='VM# '
+export PS1='VM# '
+export PS1export PS1='VM# ='VM# '
+'
+delete system login user test
+delete system login user test
+[?2004l[?2004hVM# [?2004l[?2004hVM# commit
+commit
+delete system login user test
+[?2004ldelete system login user test
+[?2004lcommitcommit
+
+[?2004hVM# [?2004hVM# exit
+exit
+commit
+[?2004lcommit
+[?2004lexitexit
+
+[system login]
+At[system login]
+Attempting to delete ctempting to delete curreurrent usent user: tesr: test
+Nt
+Not removot removining user fg user from systrom system to em to avoidavoid uninte unintentionantional lol lockouckout.
+Plt.
+Pleaease rse reieinsnstate user tate user in cin config onfig to avoto avoidid m mismatcismatch with sh with sysystetem.
+
+m.
+
+
+
+[?2[?2004hVM# 004hVM# exitexit
+
+[?200[?2004l4lexit
+exit
+[?200[?2004hVM$ 4hVM$ poweroff
+poweroff
+poweropoweroff
+ff
+[?2[?2004l004lProceed with powProceed with powereroff? (off? (YeYes/No) s/No) [N[No]o]Yes
+Yes
+  YY
+
+                                                                                                                                                              
+Broadc
+Broadcast meast messagessage from r from root@noot@node (pode (pts/0) (ts/0) (Tue ATue Aug ug 11 09:35:411 09:35:45 25 20026):  26):                    
+
+                                                                                                                                                            
+The  
+The sys system is gtem is goingoing dow down for syn for systemstem ha halt
+lt
+                                                                                                                                                           
+   
+
+Bro
+Broaadcast dcast messmessage from rage from roooot@nt@node oode on pn pts/0 (Tuts/0 (Tue e 20262026-08-11 -08-11 09:09:35:45 IS35:45 IST)T):
+
+:
+
+The systThe system wem willill po power wer off nooff now!
+w!
+
+
+[?2004[?2004hVM$ hVM$ 
+
+
+[?2004l
+[?2004l[?2004hVM[?2004hVM$ $ [?2004l[?2004l
+
+[?2004hHOST$ [?2004hHOST$ virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+virsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lvirsh undefine AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid
+[?2004lDomain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' has been undefined
+
+Domain 'AUTO_BUILD_EPDG-2024_20260810T2311-amd64.hybrid' has been undefined
+
+[?2004h[?2004hHOST$ HOST$ sudo virt-sparsify /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 --compress /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+sudo virt-sparsify /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 --compress /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+sudo virt-sparsify /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 --compress /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004lsudo virt-sparsify /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2 --compress /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+For security reasons, the password you type will not be visible.
+
+[sudo] password for ngn: 
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+For security reasons, the password you type will not be visible.
+
+[sudo] password for ngn: ngn@8737
+ngn@8737
+
+
+[   0.0] [0;32mCreate overlay file in /tmp to protect source disk[0m
+[   0.0] [0;32mCreate overlay file in /tmp to protect source disk[0m
+[   0.0] [0;32mExamine source disk[0m
+[   0.0] [0;32mExamine source disk[0m
+[   1.2] [0;32mFill free space in /dev/sda2 with zero[0m
+[   1.2] [0;32mFill free space in /dev/sda2 with zero[0m
+◓  5% ⟦▒▒▒══════════════════════════════════════════════════════════════⟧ --:--
+◓  5% ⟦▒▒▒══════════════════════════════════════════════════════════════⟧ --:--
+[A◑  6% ⟦▒▒▒▒═════════════════════════════════════════════════════════════⟧ --:--
+[A◑  6% ⟦▒▒▒▒═════════════════════════════════════════════════════════════⟧ --:--
+[A◒  7% ⟦▒▒▒▒▒════════════════════════════════════════════════════════════⟧ --:--
+[A◒  7% ⟦▒▒▒▒▒════════════════════════════════════════════════════════════⟧ --:--
+[A◐  8% ⟦▒▒▒▒▒════════════════════════════════════════════════════════════⟧ 00:31
+[A◐  8% ⟦▒▒▒▒▒════════════════════════════════════════════════════════════⟧ 00:31
+[A◓  9% ⟦▒▒▒▒▒▒═══════════════════════════════════════════════════════════⟧ 00:31
+[A◓  9% ⟦▒▒▒▒▒▒═══════════════════════════════════════════════════════════⟧ 00:31
+[A◑ 10% ⟦▒▒▒▒▒▒═══════════════════════════════════════════════════════════⟧ 00:30
+[A◑ 10% ⟦▒▒▒▒▒▒═══════════════════════════════════════════════════════════⟧ 00:30
+[A◒ 11% ⟦▒▒▒▒▒▒▒══════════════════════════════════════════════════════════⟧ 00:30
+[A◒ 11% ⟦▒▒▒▒▒▒▒══════════════════════════════════════════════════════════⟧ 00:30
+[A◐ 12% ⟦▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════════⟧ 00:30
+[A◐ 12% ⟦▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════════⟧ 00:30
+[A◓ 13% ⟦▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════════⟧ 00:30
+[A◓ 13% ⟦▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════════⟧ 00:30
+[A◑ 14% ⟦▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════════⟧ --:--
+[A◑ 14% ⟦▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════════⟧ --:--
+[A◒ 15% ⟦▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════════⟧ 00:29
+[A◒ 15% ⟦▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════════⟧ 00:29
+[A◐ 16% ⟦▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════════════⟧ 00:29
+[A◐ 16% ⟦▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════════════⟧ 00:29
+[A◓ 17% ⟦▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════════⟧ 00:28
+[A◓ 17% ⟦▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════════⟧ 00:28
+[A◑ 18% ⟦▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════════⟧ 00:28
+[A◑ 18% ⟦▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════════⟧ 00:28
+[A◒ 19% ⟦▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════⟧ 00:28
+[A◒ 19% ⟦▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════════⟧ 00:28
+[A◐ 20% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════⟧ 00:27
+[A◐ 20% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════⟧ 00:27
+[A◓ 21% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════⟧ 00:27
+[A◓ 21% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════════⟧ 00:27
+[A◑ 22% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════════⟧ 00:26
+[A◑ 22% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════════⟧ 00:26
+[A◒ 23% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════⟧ 00:26
+[A◒ 23% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════⟧ 00:26
+[A◐ 24% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════⟧ 00:26
+[A◐ 24% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════════⟧ 00:26
+[A◓ 25% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════⟧ 00:25
+[A◓ 25% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════⟧ 00:25
+[A◑ 26% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════⟧ 00:25
+[A◑ 26% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════════⟧ 00:25
+[A◒ 26% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════⟧ 00:25
+[A◒ 26% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════⟧ 00:25
+[A◐ 27% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════⟧ --:--
+[A◐ 27% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════════⟧ --:--
+[A◓ 27% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◓ 27% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◑ 28% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◑ 28% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◒ 29% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◒ 29% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════════⟧ --:--
+[A◐ 29% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◐ 29% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◓ 30% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◓ 30% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◑ 30% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◑ 30% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════════⟧ --:--
+[A◒ 31% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════⟧ --:--
+[A◒ 31% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════⟧ --:--
+[A◐ 31% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════⟧ --:--
+[A◐ 31% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════════⟧ --:--
+[A◓ 32% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◓ 32% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◑ 32% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◑ 32% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◒ 33% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◒ 33% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════════⟧ --:--
+[A◐ 33% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◐ 33% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◓ 34% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◓ 34% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◑ 35% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◑ 35% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════════⟧ --:--
+[A◒ 35% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◒ 35% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◐ 36% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◐ 36% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◓ 36% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◓ 36% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════════⟧ --:--
+[A◑ 37% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════⟧ 00:26
+[A◑ 37% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════════⟧ 00:26
+[A◒ 38% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════⟧ 00:25
+[A◒ 38% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════⟧ 00:25
+[A◐ 39% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════⟧ 00:25
+[A◐ 39% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════════⟧ 00:25
+[A◓ 40% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════⟧ 00:24
+[A◓ 40% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════⟧ 00:24
+[A◑ 41% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════⟧ 00:24
+[A◑ 41% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════════⟧ 00:24
+[A◒ 42% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════⟧ 00:23
+[A◒ 42% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════════⟧ 00:23
+[A◐ 43% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════⟧ 00:23
+[A◐ 43% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════⟧ 00:23
+[A◓ 44% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════⟧ 00:22
+[A◓ 44% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════════⟧ 00:22
+[A◑ 45% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════⟧ 00:22
+[A◑ 45% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════════⟧ 00:22
+[A◒ 46% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════⟧ 00:21
+[A◒ 46% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════⟧ 00:21
+[A◐ 47% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════⟧ 00:21
+[A◐ 47% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════════⟧ 00:21
+[A◓ 48% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════⟧ 00:20
+[A◓ 48% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════════⟧ 00:20
+[A◑ 49% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════⟧ 00:20
+[A◑ 49% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════⟧ 00:20
+[A◒ 50% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════⟧ 00:19
+[A◒ 50% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════════⟧ 00:19
+[A◐ 51% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════⟧ 00:19
+[A◐ 51% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════⟧ 00:19
+[A◓ 52% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════⟧ 00:19
+[A◓ 52% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════════⟧ 00:19
+[A◑ 52% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════⟧ 00:18
+[A◑ 52% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════⟧ 00:18
+[A◒ 53% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════⟧ 00:18
+[A◒ 53% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════════⟧ 00:18
+[A◐ 54% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◐ 54% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◓ 54% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◓ 54% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◑ 55% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◑ 55% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════════⟧ 00:18
+[A◒ 55% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════⟧ 00:18
+[A◒ 55% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════⟧ 00:18
+[A◐ 56% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════⟧ 00:17
+[A◐ 56% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════════⟧ 00:17
+[A◓ 57% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◓ 57% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◑ 57% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◑ 57% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◒ 58% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◒ 58% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════════⟧ 00:17
+[A◐ 59% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════⟧ 00:16
+[A◐ 59% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════⟧ 00:16
+[A◓ 59% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════⟧ 00:16
+[A◓ 59% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════════⟧ 00:16
+[A◑ 60% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════⟧ 00:16
+[A◑ 60% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════════⟧ 00:16
+[A◒ 61% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════⟧ 00:15
+[A◒ 61% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════⟧ 00:15
+[A◐ 62% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════⟧ 00:15
+[A◐ 62% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════════⟧ 00:15
+[A◓ 63% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════⟧ 00:14
+[A◓ 63% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════⟧ 00:14
+[A◑ 64% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════⟧ 00:14
+[A◑ 64% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════════⟧ 00:14
+[A◒ 65% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════⟧ 00:14
+[A◒ 65% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════════⟧ 00:14
+[A◐ 66% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════⟧ 00:13
+[A◐ 66% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════⟧ 00:13
+[A◓ 67% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════⟧ 00:13
+[A◓ 67% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════════⟧ 00:13
+[A◑ 68% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════⟧ 00:12
+[A◑ 68% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════⟧ 00:12
+[A◒ 69% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════⟧ 00:12
+[A◒ 69% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════════⟧ 00:12
+[A◐ 70% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════⟧ 00:12
+[A◐ 70% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════════⟧ 00:12
+[A◓ 71% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════⟧ 00:11
+[A◓ 71% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════⟧ 00:11
+[A◑ 72% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════⟧ 00:11
+[A◑ 72% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════════⟧ 00:11
+[A◒ 73% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════⟧ 00:10
+[A◒ 73% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════════⟧ 00:10
+[A◐ 74% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════⟧ 00:10
+[A◐ 74% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════⟧ 00:10
+[A◓ 75% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════⟧ 00:10
+[A◓ 75% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════════⟧ 00:10
+[A◑ 75% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════⟧ 00:09
+[A◑ 75% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════════⟧ 00:09
+[A◒ 77% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════⟧ 00:09
+[A◒ 77% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════⟧ 00:09
+[A◐ 78% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════⟧ 00:08
+[A◐ 78% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════════⟧ 00:08
+[A◓ 79% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════⟧ 00:08
+[A◓ 79% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════════⟧ 00:08
+[A◑ 80% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════⟧ 00:07
+[A◑ 80% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════⟧ 00:07
+[A◒ 81% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════⟧ 00:07
+[A◒ 81% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════════⟧ 00:07
+[A◐ 82% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════⟧ 00:07
+[A◐ 82% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════════⟧ 00:07
+[A◓ 83% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════⟧ 00:06
+[A◓ 83% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════⟧ 00:06
+[A◑ 84% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════⟧ 00:06
+[A◑ 84% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════════⟧ 00:06
+[A◒ 85% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════⟧ 00:05
+[A◒ 85% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════⟧ 00:05
+[A◐ 86% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════⟧ 00:05
+[A◐ 86% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════════⟧ 00:05
+[A◓ 87% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════⟧ 00:05
+[A◓ 87% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════════⟧ 00:05
+[A◑ 88% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════⟧ 00:04
+[A◑ 88% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════⟧ 00:04
+[A◒ 88% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════⟧ 00:04
+[A◒ 88% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════════⟧ 00:04
+[A◐ 89% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════⟧ 00:03
+[A◐ 89% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══════⟧ 00:03
+[A◓ 90% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════⟧ 00:03
+[A◓ 90% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════⟧ 00:03
+[A◑ 91% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════⟧ 00:03
+[A◑ 91% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══════⟧ 00:03
+[A◒ 92% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════⟧ 00:02
+[A◒ 92% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════⟧ 00:02
+[A◐ 93% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════⟧ 00:02
+[A◐ 93% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═════⟧ 00:02
+[A◓ 94% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════⟧ 00:02
+[A◓ 94% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒════⟧ 00:02
+[A◑ 95% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══⟧ 00:01
+[A◑ 95% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══⟧ 00:01
+[A◒ 96% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══⟧ 00:01
+[A◒ 96% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═══⟧ 00:01
+[A◐ 97% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══⟧ 00:00
+[A◐ 97% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══⟧ 00:00
+[A◓ 98% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══⟧ 00:00
+[A◓ 98% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒══⟧ 00:00
+[A◑ 99% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═⟧ 00:00
+[A◑ 99% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒═⟧ 00:00
+[A 100% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒⟧ 00:00
+[A 100% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒⟧ 00:00
+[  40.4] [0;32mCopy to destination and make sparse[0m
+[  40.4] [0;32mCopy to destination and make sparse[0m
+[ 101.0] [0;32mSparsify operation completed with no errors.[0m
+[1;35mvirt-sparsify: Before deleting the old disk, carefully check that the 
+target disk boots and works correctly.[0m
+[ 101.0] [0;32mSparsify operation completed with no errors.[0m
+[1;35mvirt-sparsify: Before deleting the old disk, carefully check that the 
+target disk boots and works correctly.[0m
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.iso
+[?2004hHOST$ [?2004hHOST$ rm -f /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+rm -f /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+rm -f /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004lrm -f /tmp/ccos_iso_to_qcow2_util/working_EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l[?2004hHOST$ [?2004hHOST$ rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+rm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004lrm -f /tmp/ccos_iso_to_qcow2_util/EPDG-2024_20260810T2311-amd64.hybrid.qcow2
+[?2004l[?2004hHOST$ [?2004hHOST$ exit
+exit
+exit
+[?2004lexit
+[?2004llogout
+logout
+Connection to 192.168.111.150 closed.
+Connection to 192.168.111.150 closed.

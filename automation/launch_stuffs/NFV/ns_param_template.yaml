@@ -1,0 +1,9 @@
+vnfs:
+  CFW1:
+    my_network: NETWORK_NAME
+    my_ctrl_network: NETWORK_CONTROL_NAME
+    my_zone: CFW_ZONE
+    my_ip: CFW_NODE1_PHYSICAL_IPV4
+    my_flavor: CFW_FLAVOR_NAME
+    my_hostname: CFW_NAME_NODE1
+    my_image: CFW_IMAGE_NAME
