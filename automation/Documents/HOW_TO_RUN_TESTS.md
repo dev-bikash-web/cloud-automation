@@ -13,6 +13,7 @@ This guide provides comprehensive instructions on how to execute, filter, debug,
 | **Run Remote SSH Tests** | `pytest -m remote` | Executes test cases against remote `CLOUD_CLI` (172.23.1.50) and `TEOSM_CLI` (172.23.9.10) nodes over SSHv2. |
 | **Run Node Launch Suite** | `pytest -m node_launch` | Executes the complete end-to-end Node Launch pipeline suite. |
 | **Run Specific Test File** | `pytest tests/test_node_launch.py` | Executes only the specified test module. |
+| **Run GUI Login Test Suite** | `pytest tests/test_gui_login.py` | Executes upfront SSH tunnel creation and Firefox/Chrome GUI logins. |
 | **Run Specific Test Case** | `pytest -k "test_01_parse_variables"` | Runs test functions matching a keyword pattern. |
 | **Verbose Live Log Run** | `pytest -vs` | Displays real-time console prints and full verbose test names. |
 

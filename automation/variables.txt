@@ -11,3 +11,13 @@ LOCAL_FOLDER=/home/bikash/workera/repository/automation_node_launch/launch_stuff
 IMAGE_NAME=EPDGDP-3.1.0_automation
 CFG_FILE_NAME=wigw_config.cfg
 TEOSM_INSTANCE_NAME=epdg_dp_node11
+CLOUD_GUI_URL=http://localhost:9999/horizon/auth/login/
+TEOSM_GUI_URL=https://localhost:9998/login
+CLOUD_GUI_USER_NAME=admin
+CLOUD_GUI_USER_PASS=CloudPRGR@123
+COULD_DOMAIN=default
+TEOSM_GUI_USER_NAME=admin
+TEOSM_GUI_USER_PASS=admin
+HEADLESS=false
+BROWSER=firefox
+

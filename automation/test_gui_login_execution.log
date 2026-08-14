@@ -1,0 +1,115 @@
+2026-08-13 15:54:15 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-13 15:54:15 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-13 15:54:15 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-13 15:54:15 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:54:17 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-13 15:54:17 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-13 15:54:17 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-13 15:54:18 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-13 15:54:18 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-13 15:54:33 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-13 15:54:36 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-13 15:54:36 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-13 15:54:36 - [INFO] - [test_03_cloud_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:54:36 - [INFO] - [test_04_teosm_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:54:38 - [INFO] - [test_04_teosm_gui_login] [96mExecuting Step 04: TEOSM GUI Login verification...[0m
+2026-08-13 15:54:38 - [INFO] - [test_04_teosm_gui_login] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-13 15:54:59 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM username: admin[0m
+2026-08-13 15:55:19 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM password.[0m
+2026-08-13 15:55:19 - [INFO] - [test_04_teosm_gui_login] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-13 15:55:22 - [INFO] - [test_04_teosm_gui_login] [96mCurrent post-submit URL: https://localhost:9998/[0m
+2026-08-13 15:55:22 - [INFO] - [test_04_teosm_gui_login] [92m✔ SUCCESS: Step 04: TEOSM GUI login executed successfully.[0m
+2026-08-13 15:55:22 - [INFO] - [test_04_teosm_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:55:22 - [INFO] - [test_04_teosm_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-13 15:56:11 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-13 15:56:11 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-13 15:56:11 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-13 15:56:11 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:56:13 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-13 15:56:13 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-13 15:56:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-13 15:56:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-13 15:56:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-13 15:56:28 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-13 15:56:31 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/project/[0m
+2026-08-13 15:56:31 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-13 15:56:31 - [INFO] - [test_03_cloud_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:56:31 - [INFO] - [test_04_teosm_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:56:33 - [INFO] - [test_04_teosm_gui_login] [96mExecuting Step 04: TEOSM GUI Login verification...[0m
+2026-08-13 15:56:33 - [INFO] - [test_04_teosm_gui_login] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-13 15:56:54 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM username: admin[0m
+2026-08-13 15:57:14 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM password.[0m
+2026-08-13 15:57:14 - [INFO] - [test_04_teosm_gui_login] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-13 15:57:17 - [INFO] - [test_04_teosm_gui_login] [96mCurrent post-submit URL: https://localhost:9998/[0m
+2026-08-13 15:57:17 - [INFO] - [test_04_teosm_gui_login] [92m✔ SUCCESS: Step 04: TEOSM GUI login executed successfully.[0m
+2026-08-13 15:57:17 - [INFO] - [test_04_teosm_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:57:18 - [INFO] - [test_04_teosm_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-13 15:57:48 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-13 15:57:48 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-13 15:57:48 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-13 15:57:48 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Firefox Selenium WebDriver (Visible GUI Window)...[0m
+2026-08-13 15:57:48 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:57:51 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-13 15:57:51 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-13 15:57:52 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-13 15:57:52 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-13 15:57:52 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-13 15:58:07 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-13 15:58:10 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-13 15:58:10 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-13 15:58:10 - [INFO] - [test_03_cloud_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:58:10 - [INFO] - [test_04_teosm_gui_login] [96mInitializing Firefox Selenium WebDriver (Visible GUI Window)...[0m
+2026-08-13 15:58:10 - [INFO] - [test_04_teosm_gui_login] [96mInitializing Firefox Selenium WebDriver (Headless)...[0m
+2026-08-13 15:58:13 - [INFO] - [test_04_teosm_gui_login] [96mExecuting Step 04: TEOSM GUI Login verification...[0m
+2026-08-13 15:58:13 - [INFO] - [test_04_teosm_gui_login] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-13 15:58:34 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM username: admin[0m
+2026-08-13 15:58:54 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM password.[0m
+2026-08-13 15:58:54 - [INFO] - [test_04_teosm_gui_login] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-13 15:58:57 - [INFO] - [test_04_teosm_gui_login] [96mCurrent post-submit URL: https://localhost:9998/[0m
+2026-08-13 15:58:57 - [INFO] - [test_04_teosm_gui_login] [92m✔ SUCCESS: Step 04: TEOSM GUI login executed successfully.[0m
+2026-08-13 15:58:57 - [INFO] - [test_04_teosm_gui_login] [96mClosing Firefox Selenium WebDriver...[0m
+2026-08-13 15:58:57 - [INFO] - [test_04_teosm_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-14 09:34:11 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-14 09:34:11 - [INFO] - [test_01_verify_gui_variables] [96mConfigured browser: 'firefox', Headless mode: 'false'[0m
+2026-08-14 09:34:11 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-14 09:34:11 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-14 09:34:11 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 09:34:14 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-14 09:34:14 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-14 09:34:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-14 09:34:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-14 09:34:14 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-14 09:34:30 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-14 09:34:33 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/project/[0m
+2026-08-14 09:34:33 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-14 09:34:33 - [INFO] - [test_03_cloud_gui_login] [96mClosing Selenium WebDriver...[0m
+2026-08-14 09:34:33 - [INFO] - [test_04_teosm_gui_login] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 09:34:36 - [INFO] - [test_04_teosm_gui_login] [96mExecuting Step 04: TEOSM GUI Login verification...[0m
+2026-08-14 09:34:36 - [INFO] - [test_04_teosm_gui_login] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 09:34:56 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM username: admin[0m
+2026-08-14 09:35:16 - [INFO] - [test_04_teosm_gui_login] [96mEntered TEOSM password.[0m
+2026-08-14 09:35:16 - [INFO] - [test_04_teosm_gui_login] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 09:35:19 - [INFO] - [test_04_teosm_gui_login] [96mCurrent post-submit URL: https://localhost:9998/[0m
+2026-08-14 09:35:19 - [INFO] - [test_04_teosm_gui_login] [92m✔ SUCCESS: Step 04: TEOSM GUI login executed successfully.[0m
+2026-08-14 09:35:19 - [INFO] - [test_04_teosm_gui_login] [96mClosing Selenium WebDriver...[0m
+2026-08-14 09:35:20 - [INFO] - [test_04_teosm_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m

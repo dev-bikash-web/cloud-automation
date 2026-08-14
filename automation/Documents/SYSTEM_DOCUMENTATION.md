@@ -131,14 +131,17 @@ Pytest executes tests sequentially in numerical function order inside [`tests/te
 - **Run All Tests**: `pytest`
 - **Run Local Offline Tests Only**: `pytest -m local`
 - **Run Remote SSH Tests Only**: `pytest -m remote`
-- **Full Command Guide**: See [`Documents/HOW_TO_RUN_TESTS.md`](file:///home/bikash/workera/repository/automation_node_launch/Documents/HOW_TO_RUN_TESTS.md).
+- **Run GUI Login Verification Tests**: `pytest tests/test_gui_login.py`
+- **Full GUI & Tunnel Automation Guide**: See [`Documents/gui_login/SELENIUM_GUI_AUTOMATION_GUIDE.md`](file:///home/bikash/workera/personal_git/cloud-automation/automation/Documents/gui_login/SELENIUM_GUI_AUTOMATION_GUIDE.md).
+- **Full Node Launch Pipeline Guide**: See [`Documents/node_launch/NODE_LAUNCH_SPECIFICATION.md`](file:///home/bikash/workera/personal_git/cloud-automation/automation/Documents/node_launch/NODE_LAUNCH_SPECIFICATION.md).
+- **Full Command Guide**: See [`Documents/HOW_TO_RUN_TESTS.md`](file:///home/bikash/workera/personal_git/cloud-automation/automation/Documents/HOW_TO_RUN_TESTS.md).
 
 ---
 
 ## 7. API Specification & Code Syntax Examples
 
 > [!NOTE]
-> For full parameter listings, expected JSON schemas, SFTP operations, and code examples, see **[`Documents/API_DOCUMENTATION.md`](file:///home/bikash/workera/repository/automation_node_launch/Documents/API_DOCUMENTATION.md)**.
+> For full parameter listings, expected JSON schemas, SFTP operations, and code examples, see **[`Documents/API_DOCUMENTATION.md`](file:///home/bikash/workera/personal_git/cloud-automation/automation/Documents/API_DOCUMENTATION.md)**.
 
 ---
 
@@ -157,3 +160,7 @@ Pytest executes tests sequentially in numerical function order inside [`tests/te
 | `test_09_run_clean_teosm` | `remote`, `node_launch` | Run `./clean.sh` on `TEOSM_CLI` | `pytest -m remote` | Authorized |
 | `test_10_run_venv_teosm` | `remote`, `node_launch` | Run `./venv.sh` on `TEOSM_CLI` | `pytest -m remote` | Authorized |
 | `node_launch_cleanup` | Teardown | Post-success cleanup of `CLOUD_NFV_FOLDER` | `pytest -m local` | **PASS** |
+| `test_01_verify_gui_variables` | `local`, `gui_login` | Parse & validate all GUI parameters (including `BROWSER` and `HEADLESS`) in `variables.txt` | `pytest tests/test_gui_login.py` | **PASS** |
+| `test_02_verify_ssh_tunnels` | `local`, `gui_login` | Verify TCP connectivity on ports 9999 & 9998 | `pytest tests/test_gui_login.py` | **PASS** |
+| `test_03_cloud_gui_login` | `local`, `gui_login` | Cloud Horizon GUI authentication via Selenium Multi-Browser Driver | `pytest tests/test_gui_login.py` | **PASS** |
+| `test_04_teosm_gui_login` | `local`, `gui_login` | TEOSM GUI authentication via Selenium Multi-Browser Driver | `pytest tests/test_gui_login.py` | **PASS** |

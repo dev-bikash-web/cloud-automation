@@ -98,7 +98,11 @@ def test_pass(msg: str):
     """Logs green success checkmark message."""
     log_success(msg)
 
+test_pass.__test__ = False
+
 def test_fail(msg: str):
     """Logs red error crossmark message and fails Pytest test case immediately."""
     log_error(msg)
     pytest.fail(msg)
+
+test_fail.__test__ = False
