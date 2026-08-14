@@ -1,0 +1,1069 @@
+2026-08-14 11:15:27 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:15:27 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget Instance: 'epdg_dp_node11', Target Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:15:27 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:15:27 - [INFO] - [test_02_login_guis] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-14 11:15:27 - [INFO] - [test_02_login_guis] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:15:27 - [INFO] - [test_02_login_guis] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:15:32 - [INFO] - [test_02_login_guis] [96mExecuting Step 02: Upfront GUI logins for Cloud Horizon and TEOSM...[0m
+2026-08-14 11:15:32 - [INFO] - [test_02_login_guis] [96mNavigating to Cloud GUI: http://localhost:9999/horizon/auth/login/[0m
+2026-08-14 11:15:48 - [INFO] - [test_02_login_guis] [96mCloud Horizon GUI login completed.[0m
+2026-08-14 11:15:48 - [INFO] - [test_02_login_guis] [96mNavigating to TEOSM GUI: https://localhost:9998/login[0m
+2026-08-14 11:16:11 - [INFO] - [test_02_login_guis] [96mTEOSM GUI login completed.[0m
+2026-08-14 11:16:11 - [INFO] - [test_02_login_guis] [92m✔ SUCCESS: Step 02: Upfront logins to both Cloud Horizon and TEOSM GUIs executed successfully.[0m
+2026-08-14 11:16:11 - [INFO] - [test_02_login_guis] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:16:12 - [INFO] - [test_03_teosm_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:16:13 - [INFO] - [test_03_teosm_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:16:13 - [INFO] - [test_03_teosm_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:16:16 - [INFO] - [test_03_teosm_cleanup] [96mExecuting Step 03 (FIRST): TEOSM Instance and Package Cleanup...[0m
+2026-08-14 11:16:16 - [INFO] - [test_03_teosm_cleanup] [96mTarget Instance: 'epdg_dp_node11', NSD: 'epdg_dp_node11_nsd', VNFD: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:16:16 - [INFO] - [test_03_teosm_cleanup] [96mChecking for NS instance 'epdg_dp_node11' on TEOSM_CLI...[0m
+2026-08-14 11:16:16 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:16:17 - [INFO] - [test_03_teosm_cleanup] [96mNS instance 'epdg_dp_node11' not present on TEOSM.[0m
+2026-08-14 11:16:17 - [INFO] - [test_03_teosm_cleanup] [96mChecking for NSD package 'epdg_dp_node11_nsd' on TEOSM_CLI...[0m
+2026-08-14 11:16:17 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present on TEOSM.[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [96mChecking for VNFD package 'epdg_dp_node11_vnfd' on TEOSM_CLI...[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present on TEOSM.[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [92m✔ SUCCESS: Step 03: TEOSM instance, NSD package, and VNFD package cleanup completed.[0m
+2026-08-14 11:16:18 - [INFO] - [test_03_teosm_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:16:19 - [INFO] - [test_04_cloud_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:16:20 - [INFO] - [test_04_cloud_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:16:20 - [INFO] - [test_04_cloud_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:16:22 - [INFO] - [test_04_cloud_cleanup] [96mExecuting Step 04 (SECOND): Cloud Volume and Image Cleanup...[0m
+2026-08-14 11:16:22 - [INFO] - [test_04_cloud_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:16:22 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:16:31 - [INFO] - [test_04_cloud_cleanup] [96mFound volume ID(s) to delete: ['be07736e-037f-4ead-bd0f-6b5d3f995b85', 'e10d3109-b3b9-45b9-b5f0-014ba6c88124'][0m
+2026-08-14 11:16:31 - [INFO] - [test_04_cloud_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 11:16:31 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 11:16:33 - [INFO] - [test_04_cloud_cleanup] [96m✔ Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' deleted successfully.[0m
+2026-08-14 11:16:33 - [INFO] - [test_04_cloud_cleanup] [96mExecuting 'openstack volume delete e10d3109-b3b9-45b9-b5f0-014ba6c88124' on CLOUD_CLI...[0m
+2026-08-14 11:16:33 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'e10d3109-b3b9-45b9-b5f0-014ba6c88124'[0m
+2026-08-14 11:16:36 - [INFO] - [test_04_cloud_cleanup] [96m✔ Volume 'e10d3109-b3b9-45b9-b5f0-014ba6c88124' deleted successfully.[0m
+2026-08-14 11:16:36 - [INFO] - [test_04_cloud_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:16:36 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:16:41 - [INFO] - [test_04_cloud_cleanup] [96mImage 'EPDGDP-3.1.0_automation' found. Executing 'openstack image delete EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:16:41 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image delete 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [96m✔ OpenStack image 'EPDGDP-3.1.0_automation' deleted successfully.[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [92m✔ SUCCESS: Step 04: Cloud volume and image cleanup completed.[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:16:44 - [INFO] - [test_04_cloud_cleanup] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-14 11:19:27 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:19:27 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget Instance: 'epdg_dp_node11', Target Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:19:27 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:19:27 - [INFO] - [test_02_login_guis] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-14 11:19:27 - [INFO] - [test_02_login_guis] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:19:27 - [INFO] - [test_02_login_guis] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:19:29 - [INFO] - [test_02_login_guis] [96mExecuting Step 02: Upfront GUI logins for Cloud Horizon and TEOSM...[0m
+2026-08-14 11:19:29 - [INFO] - [test_02_login_guis] [96mNavigating to Cloud GUI: http://localhost:9999/horizon/auth/login/[0m
+2026-08-14 11:19:44 - [INFO] - [test_02_login_guis] [96mCloud Horizon GUI login completed.[0m
+2026-08-14 11:19:44 - [INFO] - [test_02_login_guis] [96mNavigating to TEOSM GUI: https://localhost:9998/login[0m
+2026-08-14 11:20:07 - [INFO] - [test_02_login_guis] [96mTEOSM GUI login completed.[0m
+2026-08-14 11:20:07 - [INFO] - [test_02_login_guis] [92m✔ SUCCESS: Step 02: Upfront logins to both Cloud Horizon and TEOSM GUIs executed successfully.[0m
+2026-08-14 11:20:07 - [INFO] - [test_02_login_guis] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:20:07 - [INFO] - [test_03_teosm_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:20:09 - [INFO] - [test_03_teosm_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:20:09 - [INFO] - [test_03_teosm_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:20:12 - [INFO] - [test_03_teosm_cleanup] [96mExecuting Step 03 (FIRST): TEOSM Instance and Package Cleanup...[0m
+2026-08-14 11:20:12 - [INFO] - [test_03_teosm_cleanup] [96mTarget Instance: 'epdg_dp_node11', NSD: 'epdg_dp_node11_nsd', VNFD: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:20:12 - [INFO] - [test_03_teosm_cleanup] [96mChecking for NS instance 'epdg_dp_node11' on TEOSM_CLI...[0m
+2026-08-14 11:20:12 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96mNS instance 'epdg_dp_node11' not present on TEOSM.[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96mChecking for NSD package 'epdg_dp_node11_nsd' on TEOSM_CLI...[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present on TEOSM.[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96mChecking for VNFD package 'epdg_dp_node11_vnfd' on TEOSM_CLI...[0m
+2026-08-14 11:20:14 - [INFO] - [test_03_teosm_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:20:15 - [INFO] - [test_03_teosm_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present on TEOSM.[0m
+2026-08-14 11:20:15 - [INFO] - [test_03_teosm_cleanup] [92m✔ SUCCESS: Step 03: TEOSM instance, NSD package, and VNFD package cleanup completed.[0m
+2026-08-14 11:20:15 - [INFO] - [test_03_teosm_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:20:15 - [INFO] - [test_04_cloud_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:20:16 - [INFO] - [test_04_cloud_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:20:16 - [INFO] - [test_04_cloud_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:20:19 - [INFO] - [test_04_cloud_cleanup] [96mExecuting Step 04 (SECOND): Cloud Volume and Image Cleanup...[0m
+2026-08-14 11:20:19 - [INFO] - [test_04_cloud_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:20:19 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:20:22 - [INFO] - [test_04_cloud_cleanup] [96mFound volume ID(s) to delete: ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:20:22 - [INFO] - [test_04_cloud_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 11:20:22 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 11:20:29 - [INFO] - [test_04_cloud_cleanup] [96mVolume delete command output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-703596f3-65e4-4b17-aed3-faf278b49cfe)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 11:20:29 - [INFO] - [test_04_cloud_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:20:29 - [INFO] - [test_04_cloud_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:20:31 - [INFO] - [test_04_cloud_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:20:31 - [INFO] - [test_04_cloud_cleanup] [92m✔ SUCCESS: Step 04: Cloud volume and image cleanup completed.[0m
+2026-08-14 11:20:31 - [INFO] - [test_04_cloud_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:20:32 - [INFO] - [test_04_cloud_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:20:32 - [INFO] - [test_04_cloud_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:20:32 - [INFO] - [test_04_cloud_cleanup] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-14 11:24:03 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:24:03 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:24:03 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:24:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:24:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:24:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:24:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:24:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 11:24:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 11:24:18 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 11:24:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 11:24:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 11:24:31 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 11:24:31 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NS Instance 'epdg_dp_node11'...[0m
+2026-08-14 11:24:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 11:24:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:24:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 11:24:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present in TEOSM GUI table.[0m
+2026-08-14 11:24:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:24:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 11:25:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 11:25:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:25:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI login and TEOSM resource cleanup executed successfully.[0m
+2026-08-14 11:25:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:25:03 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:25:04 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:25:04 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 11:25:04 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:25:04 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:25:13 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s) to delete: ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:25:13 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 11:25:13 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 11:25:19 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-07525556-fda9-4e42-b88c-f3a1d67eb7de)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 11:25:19 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:25:19 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:25:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:25:21 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup completed strictly via CLI.[0m
+2026-08-14 11:25:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:25:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:40:25 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:40:25 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:40:25 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: ENABLE_DELETION = False (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 11:40:25 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:40:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:40:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:40:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:40:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:40:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 11:40:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 11:40:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 11:40:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 11:40:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 11:40:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 11:40:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NS Instance 'epdg_dp_node11'...[0m
+2026-08-14 11:41:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 11:41:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:41:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 11:41:15 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present in TEOSM GUI table.[0m
+2026-08-14 11:41:15 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:41:15 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 11:41:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 11:41:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:41:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI login and TEOSM resource cleanup discovery executed successfully.[0m
+2026-08-14 11:41:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:41:26 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:41:27 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:41:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 11:41:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:41:27 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:41:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:41:39 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN / SAFE MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 11:41:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:41:39 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:41:42 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:41:42 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 11:41:42 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:41:42 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:43:28 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:43:28 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:43:28 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 11:43:28 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:43:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:43:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:43:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:43:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:43:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 11:43:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 11:43:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 11:43:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 11:43:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 11:43:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 11:43:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NS Instance 'epdg_dp_node11'...[0m
+2026-08-14 11:44:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 11:44:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:44:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 11:44:17 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present in TEOSM GUI table.[0m
+2026-08-14 11:44:17 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:44:18 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching TEOSM GUI for VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 11:44:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 11:44:28 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:44:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI login and TEOSM resource cleanup discovery executed successfully.[0m
+2026-08-14 11:44:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:44:29 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:44:30 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:44:30 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 11:44:30 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:44:30 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:44:40 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:44:40 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 11:44:40 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:44:40 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:44:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:44:43 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 11:44:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:44:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:52:04 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:52:04 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:52:04 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 11:52:04 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:52:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:52:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:52:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:52:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:52:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 11:52:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 11:52:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 11:52:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 11:52:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 11:52:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 11:52:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 11:52:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Instances' -> 'NS Instances'...[0m
+2026-08-14 11:52:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked sub-menu item 'NS Instances'.[0m
+2026-08-14 11:52:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 11:52:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 11:52:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 11:52:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 11:52:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:52:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 11:52:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'NS Packages'...[0m
+2026-08-14 11:52:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked sub-menu item 'NS Packages'.[0m
+2026-08-14 11:52:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 11:52:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:52:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 11:52:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NSD package 'epdg_dp_node11_nsd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 11:52:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 11:52:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'VNF Packages'...[0m
+2026-08-14 11:52:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSub-menu item 'VNF Packages' processed on current view.[0m
+2026-08-14 11:52:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 11:52:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:53:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_vnfd' not present in table.[0m
+2026-08-14 11:53:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 11:53:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:53:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 11:53:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:53:08 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:53:09 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:53:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 11:53:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:53:09 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:53:12 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:53:12 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 11:53:12 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:53:12 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:53:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:53:14 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 11:53:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:53:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 11:57:09 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 11:57:09 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:57:09 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 11:57:09 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 11:57:09 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 11:57:09 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 11:57:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 11:57:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 11:57:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 11:57:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 11:57:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 11:57:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 11:57:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 11:57:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 11:57:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 11:57:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Instances' -> 'NS Instances'...[0m
+2026-08-14 11:57:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked sub-menu item 'NS Instances'.[0m
+2026-08-14 11:57:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 11:57:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 11:57:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 11:57:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 11:57:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 11:57:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 11:57:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'NS Packages'...[0m
+2026-08-14 11:57:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked sub-menu item 'NS Packages'.[0m
+2026-08-14 11:57:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 11:57:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 11:57:59 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 11:57:59 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NSD package 'epdg_dp_node11_nsd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 11:57:59 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 11:57:59 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'VNF Packages'...[0m
+2026-08-14 11:58:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSub-menu item 'VNF Packages' processed on current view.[0m
+2026-08-14 11:58:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 11:58:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:58:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_vnfd' not present in table.[0m
+2026-08-14 11:58:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 11:58:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 11:58:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 11:58:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 11:58:13 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 11:58:14 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 11:58:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 11:58:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 11:58:14 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 11:58:25 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 11:58:25 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 11:58:25 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 11:58:25 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 11:58:28 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 11:58:28 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 11:58:28 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 11:58:28 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:00:51 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:00:51 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:00:51 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 12:00:51 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:00:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:00:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:00:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:00:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:00:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:00:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:01:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:01:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:01:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:01:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:01:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:01:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Instances' -> 'NS Instances'...[0m
+2026-08-14 12:01:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSub-menu 'NS Instances' not directly visible. Expanding parent menu 'Instances'...[0m
+2026-08-14 12:01:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClicked parent menu 'Instances'. Waiting for sub-menu elements to expand...[0m
+2026-08-14 12:01:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully clicked sub-menu item 'NS Instances'.[0m
+2026-08-14 12:01:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:01:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:01:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 12:01:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 12:01:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 12:01:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:01:35 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'NS Packages'...[0m
+2026-08-14 12:01:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Sub-menu item 'NS Packages' was already visible in DOM. Clicked sub-menu directly.[0m
+2026-08-14 12:01:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:01:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_nsd' not present in table.[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present in TEOSM GUI table.[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'VNF Packages'...[0m
+2026-08-14 12:01:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Sub-menu item 'VNF Packages' was already visible in DOM. Clicked sub-menu directly.[0m
+2026-08-14 12:01:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:01:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:02:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_vnfd' not present in table.[0m
+2026-08-14 12:02:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 12:02:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:02:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:02:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:02:05 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:02:06 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:02:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:02:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:02:06 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:02:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:02:09 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 12:02:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:02:09 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:02:11 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:02:11 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:02:11 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:02:11 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:03:39 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:03:39 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:03:39 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 12:03:39 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:03:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:03:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:03:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:03:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:03:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:03:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:03:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:04:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:04:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:04:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:04:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:04:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Instances' -> 'NS Instances'...[0m
+2026-08-14 12:04:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSub-menu 'NS Instances' not directly visible. Expanding parent menu 'Instances'...[0m
+2026-08-14 12:04:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClicked parent menu 'Instances'. Waiting for sub-menu elements to expand...[0m
+2026-08-14 12:04:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully clicked sub-menu item 'NS Instances'.[0m
+2026-08-14 12:04:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:04:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:04:22 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 12:04:22 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 12:04:22 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 12:04:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:04:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'NS Packages'...[0m
+2026-08-14 12:04:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Sub-menu item 'NS Packages' was already visible in DOM. Clicked sub-menu directly.[0m
+2026-08-14 12:04:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:04:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:04:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_nsd' not present in table.[0m
+2026-08-14 12:04:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNSD package 'epdg_dp_node11_nsd' not present in TEOSM GUI table.[0m
+2026-08-14 12:04:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-list | grep -i 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:04:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:04:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating TEOSM GUI menu: 'Packages' -> 'VNF Packages'...[0m
+2026-08-14 12:04:38 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Sub-menu item 'VNF Packages' was already visible in DOM. Clicked sub-menu directly.[0m
+2026-08-14 12:04:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:04:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:04:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11_vnfd' not present in table.[0m
+2026-08-14 12:04:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mVNFD package 'epdg_dp_node11_vnfd' not present in TEOSM GUI table.[0m
+2026-08-14 12:04:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-list | grep -i 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:04:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:04:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:04:53 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:04:54 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:04:54 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:04:54 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:04:54 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:05:04 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:05:04 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 12:05:04 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:05:04 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:05:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:05:06 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:05:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:05:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:08:11 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:08:11 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:08:11 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 12:08:11 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:08:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:08:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:08:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:08:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:08:15 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:08:15 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:08:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:08:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:08:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:08:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:08:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:08:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:08:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:08:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 12:08:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:08:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:08:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 12:08:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 12:08:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 12:08:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:08:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:08:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:09:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:09:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:09:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:09:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:09:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NSD package 'epdg_dp_node11_nsd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:09:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:09:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:09:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:09:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:09:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:09:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:09:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target VNFD package 'epdg_dp_node11_vnfd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:09:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:09:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:09:07 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:09:08 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:09:08 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:09:08 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:09:08 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:09:19 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:09:19 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 12:09:19 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:09:19 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:09:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:09:21 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:09:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:09:21 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:10:58 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:10:58 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:10:58 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 12:10:58 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:10:58 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:10:58 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:11:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:11:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:11:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:11:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:11:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:11:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:11:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:11:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:11:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:11:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:11:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:11:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mBreadcrumb-holder active path: 'Dashboard   Projects   admin'[0m
+2026-08-14 12:11:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:11:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:11:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 12:11:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 12:11:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 12:11:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:11:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:11:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:11:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:11:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:11:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:11:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:11:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NSD package 'epdg_dp_node11_nsd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:11:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:11:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:11:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:11:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:11:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:11:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:11:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target VNFD package 'epdg_dp_node11_vnfd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:11:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:11:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:11:52 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:11:53 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:11:53 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:11:53 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:11:53 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:11:56 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:11:56 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 12:11:56 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:11:56 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:12:03 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:12:03 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:12:03 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:12:03 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:14:11 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:14:11 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:14:11 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = True (SAFE DRY-RUN MODE (No items will be deleted))[0m
+2026-08-14 12:14:11 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:14:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:14:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:14:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:14:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:14:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:14:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:14:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:14:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:14:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:14:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:14:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:14:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:14:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:14:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 12:14:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:14:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:14:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11' confirmed in table row text: 'epdg_dp_node11 | 398897b6-c28b-43a7-9dce-10f823ba9aab | epdg_dp_node11_nsd | Aug-14-2026 12:13:30 | Operation: INSTANTIATING.2d5a1cc0-8c9e-4661-8859-abcf938ba43d, Stage 2/5: deployment of KDUs, VMs and execution environments. Detail: Deploying at VIM: Error at create image: Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}'. Error at create vdu: Cannot CREATE vdu because depends on failed CREATE image id=nsrs:398897b6-c28b-43a7-9dce-10f823ba9aab:image.0): Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}' | Action'[0m
+2026-08-14 12:14:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NS instance 'epdg_dp_node11' present in table. Real 'Delete NS' action and 60s wait bypassed.[0m
+2026-08-14 12:14:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:14:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:14:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:14:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:14:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:14:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:14:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:14:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target NSD package 'epdg_dp_node11_nsd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:14:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:14:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:14:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:14:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:14:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:14:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:14:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[DRY-RUN MODE] Verified target VNFD package 'epdg_dp_node11_vnfd' present in table. Real GUI deletion bypassed.[0m
+2026-08-14 12:14:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:14:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:14:57 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:14:58 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:14:58 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:14:58 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:14:58 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:15:01 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:15:01 - [INFO] - [test_03_cloud_cli_cleanup] [96m[DRY-RUN MODE] Target Cloud Volume 'be07736e-037f-4ead-bd0f-6b5d3f995b85' found. Real execution of 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' bypassed.[0m
+2026-08-14 12:15:01 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:15:01 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:15:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:15:06 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:15:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:15:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:15:29 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:15:29 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:15:29 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 12:15:29 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:15:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:15:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:15:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:15:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:15:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:15:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:15:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:15:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:15:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:15:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:15:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:15:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:15:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:16:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 12:16:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:16:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:16:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11' confirmed in table row text: 'epdg_dp_node11 | 398897b6-c28b-43a7-9dce-10f823ba9aab | epdg_dp_node11_nsd | Aug-14-2026 12:13:30 | Operation: INSTANTIATING.2d5a1cc0-8c9e-4661-8859-abcf938ba43d, Stage 2/5: deployment of KDUs, VMs and execution environments. Detail: Deploying at VIM: Error at create image: Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}'. Error at create vdu: Cannot CREATE vdu because depends on failed CREATE image id=nsrs:398897b6-c28b-43a7-9dce-10f823ba9aab:image.0): Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}' | Action'[0m
+2026-08-14 12:16:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting 'Delete NS' action for verified NS instance 'epdg_dp_node11'...[0m
+2026-08-14 12:16:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-delete 'epdg_dp_node11'[0m
+2026-08-14 12:16:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mWaiting 60 seconds (1 minute) after NS Instance deletion for TEOSM/OSM background teardown & lock release...[0m
+2026-08-14 12:17:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ 60-second post-instance deletion wait completed.[0m
+2026-08-14 12:17:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:17:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:17:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:17:17 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:17:17 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:17:17 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:17:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:17:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting delete action for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:17:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm nsd-delete 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:17:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:17:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:17:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:17:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:17:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:17:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:17:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting delete action for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:17:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm vnf-delete 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:17:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:17:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:17:45 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:17:46 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:17:46 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:17:46 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:17:46 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:17:58 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:17:58 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 12:17:58 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 12:18:00 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-72a38977-6958-4bee-a0cb-f7a7f99ac357)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 12:18:00 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:18:00 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:18:02 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:18:02 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:18:02 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:18:02 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:21:37 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:21:37 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:21:37 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 12:21:37 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:21:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:21:37 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:21:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:21:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:21:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:21:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:21:52 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:22:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:22:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:22:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:22:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:22:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:22:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:22:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 12:22:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:22:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:22:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11' confirmed in table row text: 'epdg_dp_node11 | 398897b6-c28b-43a7-9dce-10f823ba9aab | epdg_dp_node11_nsd | Aug-14-2026 12:13:30 | Operation: INSTANTIATING.2d5a1cc0-8c9e-4661-8859-abcf938ba43d, Stage 2/5: deployment of KDUs, VMs and execution environments. Detail: Deploying at VIM: Error at create image: Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}'. Error at create vdu: Cannot CREATE vdu because depends on failed CREATE image id=nsrs:398897b6-c28b-43a7-9dce-10f823ba9aab:image.0): Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}' | Action'[0m
+2026-08-14 12:22:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NS instance 'epdg_dp_node11'...[0m
+2026-08-14 12:22:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:22:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on deletion modal pop-up.[0m
+2026-08-14 12:22:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully triggered deletion of NS instance 'epdg_dp_node11' via TEOSM GUI.[0m
+2026-08-14 12:22:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mWaiting 60 seconds (1 minute) after NS Instance deletion for TEOSM/OSM background teardown & lock release...[0m
+2026-08-14 12:23:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ 60-second post-instance deletion wait completed.[0m
+2026-08-14 12:23:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:23:14 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:23:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:23:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:23:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:23:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:23:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:23:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:23:22 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:23:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on deletion modal pop-up.[0m
+2026-08-14 12:23:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 12:23:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:23:25 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:23:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:23:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:23:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:23:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:23:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:23:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:23:31 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on deletion modal pop-up.[0m
+2026-08-14 12:23:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 12:23:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:23:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:23:33 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:23:34 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:23:34 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:23:34 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:23:34 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:23:37 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:23:37 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 12:23:37 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 12:23:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-75745ac3-68a1-4763-9596-10ae55f42bb6)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 12:23:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:23:39 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:23:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:23:43 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:23:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:23:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 12:25:11 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 12:25:11 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:25:11 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 12:25:11 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 12:25:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 12:25:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 12:25:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 12:25:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 12:25:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 12:25:16 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 12:25:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 12:25:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 12:25:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 12:25:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 12:25:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 12:25:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 12:25:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 12:25:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 12:25:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 12:25:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 12:25:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11' confirmed in table row text: 'epdg_dp_node11 | 398897b6-c28b-43a7-9dce-10f823ba9aab | epdg_dp_node11_nsd | Aug-14-2026 12:13:30 | Operation: INSTANTIATING.2d5a1cc0-8c9e-4661-8859-abcf938ba43d, Stage 2/5: deployment of KDUs, VMs and execution environments. Detail: Deploying at VIM: Error at create image: Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}'. Error at create vdu: Cannot CREATE vdu because depends on failed CREATE image id=nsrs:398897b6-c28b-43a7-9dce-10f823ba9aab:image.0): Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}' | Action'[0m
+2026-08-14 12:25:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NS instance 'epdg_dp_node11'...[0m
+2026-08-14 12:25:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:25:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11 ? Cancel Ok'[0m
+2026-08-14 12:25:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on pop-up modal for 'epdg_dp_node11'.[0m
+2026-08-14 12:25:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for NS Instance 'epdg_dp_node11'.[0m
+2026-08-14 12:25:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully triggered deletion of NS instance 'epdg_dp_node11' via TEOSM GUI.[0m
+2026-08-14 12:25:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mWaiting 60 seconds (1 minute) after NS Instance deletion for TEOSM/OSM background teardown & lock release...[0m
+2026-08-14 12:26:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ 60-second post-instance deletion wait completed.[0m
+2026-08-14 12:26:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 12:26:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 12:26:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 12:26:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 12:26:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:26:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 12:26:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 12:26:56 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 12:26:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:26:58 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_nsd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_nsd ? Cancel Ok'[0m
+2026-08-14 12:26:58 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on pop-up modal for 'epdg_dp_node11_nsd'.[0m
+2026-08-14 12:27:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for NSD Package 'epdg_dp_node11_nsd'.[0m
+2026-08-14 12:27:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 12:27:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 12:27:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 12:27:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 12:27:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:27:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 12:27:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 12:27:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 12:27:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 12:27:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_vnfd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_vnfd ? Cancel Ok'[0m
+2026-08-14 12:27:06 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked confirmation button on pop-up modal for 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 12:27:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for VNFD Package 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 12:27:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 12:27:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 12:27:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 12:27:08 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 12:27:09 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 12:27:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 12:27:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 12:27:09 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 12:27:13 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 12:27:13 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 12:27:13 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 12:27:15 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-f64a9a44-2298-4147-abcc-fc6b1b98a18c)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 12:27:15 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 12:27:15 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 12:27:17 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 12:27:17 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 12:27:17 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 12:27:17 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 13:32:55 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 13:32:55 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:32:55 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 13:32:55 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 13:32:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 13:32:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 13:32:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 13:32:57 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 13:33:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 13:33:00 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 13:33:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 13:33:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 13:33:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 13:33:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 13:33:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 13:33:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 13:33:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 13:33:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 13:33:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 13:33:27 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 13:33:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11' confirmed in table row text: 'epdg_dp_node11 | 398897b6-c28b-43a7-9dce-10f823ba9aab | epdg_dp_node11_nsd | Aug-14-2026 12:13:30 | Operation: INSTANTIATING.2d5a1cc0-8c9e-4661-8859-abcf938ba43d, Stage 2/5: deployment of KDUs, VMs and execution environments. Detail: Deploying at VIM: Error at create image: Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}'. Error at create vdu: Cannot CREATE vdu because depends on failed CREATE image id=nsrs:398897b6-c28b-43a7-9dce-10f823ba9aab:image.0): Image not found with this criteria: '{'filter_dict': {'name': 'EPDGDP-3.1.0_automation'}}' | Action'[0m
+2026-08-14 13:33:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NS instance 'epdg_dp_node11'...[0m
+2026-08-14 13:33:30 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:33:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11 ? Cancel Ok'[0m
+2026-08-14 13:33:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11'.[0m
+2026-08-14 13:33:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for NS Instance 'epdg_dp_node11'.[0m
+2026-08-14 13:33:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully triggered deletion of NS instance 'epdg_dp_node11' via TEOSM GUI.[0m
+2026-08-14 13:33:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mWaiting 60 seconds (1 minute) after NS Instance deletion for TEOSM/OSM background teardown & lock release...[0m
+2026-08-14 13:34:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ 60-second post-instance deletion wait completed.[0m
+2026-08-14 13:34:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 13:34:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 13:34:36 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 13:34:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 13:34:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:34:39 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 13:34:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 8dbe32a8-ac43-476c-aa0e-7c29910208da | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 13:34:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:34:42 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:34:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_nsd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_nsd ? Cancel Ok'[0m
+2026-08-14 13:34:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_nsd'.[0m
+2026-08-14 13:34:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for NSD Package 'epdg_dp_node11_nsd'.[0m
+2026-08-14 13:34:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 13:34:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 13:34:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 13:34:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 13:34:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:34:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 13:34:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 007b765f-e8e6-46b3-a0e2-4e9756bb4b8f | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 13:34:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:34:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:34:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_vnfd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_vnfd ? Cancel Ok'[0m
+2026-08-14 13:34:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 13:34:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNo error toast notification displayed post-deletion for VNFD Package 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 13:34:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 13:34:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 13:34:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 13:34:56 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 13:34:57 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 13:34:57 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 13:34:57 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 13:34:57 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 13:35:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 13:35:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 13:35:06 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 13:35:12 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-2666399b-cee6-4a91-8b0b-85305a088c99)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 13:35:12 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 13:35:12 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:35:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 13:35:14 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 13:35:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 13:35:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 13:38:40 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 13:38:40 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:38:40 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 13:38:40 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 13:38:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 13:38:40 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 13:38:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 13:38:41 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 13:38:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 13:38:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 13:38:54 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 13:39:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 13:39:04 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 13:39:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 13:39:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 13:39:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 13:39:07 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 13:39:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 13:39:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 13:39:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 13:39:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 13:39:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 13:39:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 13:39:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 13:39:24 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 13:39:26 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 13:39:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 13:39:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:39:29 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 13:39:31 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 535f7323-2796-4bdb-b5ee-b96763b4d1e1 | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 13:39:31 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:39:32 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:39:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_nsd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_nsd ? Cancel Ok'[0m
+2026-08-14 13:39:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_nsd'.[0m
+2026-08-14 13:39:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for NSD Package 'epdg_dp_node11_nsd' (No active toast pop-up captured).[0m
+2026-08-14 13:39:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 13:39:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 13:39:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 13:39:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 13:39:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:39:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 13:39:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | f8a77d28-003c-418f-b5f1-ee02f8e8c4ac | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 13:39:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:39:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:39:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_vnfd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_vnfd ? Cancel Ok'[0m
+2026-08-14 13:39:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 13:40:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for VNFD Package 'epdg_dp_node11_vnfd' (No active toast pop-up captured).[0m
+2026-08-14 13:40:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 13:40:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 13:40:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 13:40:14 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 13:40:15 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 13:40:15 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 13:40:15 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 13:40:15 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 13:40:20 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 13:40:20 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:40:20 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 13:40:20 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 13:40:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 13:40:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 13:40:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 13:40:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 13:40:22 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 13:40:22 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 13:40:22 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 13:40:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 13:40:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 13:40:24 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-d6d8e007-834f-4b82-935f-cc22590b36dd)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 13:40:24 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 13:40:24 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:40:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 13:40:27 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 13:40:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 13:40:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 13:40:34 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 13:40:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 13:40:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 13:40:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 13:40:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 13:40:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 13:40:47 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 13:40:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 13:40:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 13:40:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 13:41:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 13:41:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 13:41:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 13:41:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 13:41:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 13:41:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 13:41:09 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 13:41:09 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:41:09 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 13:41:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | c4f1f87f-3ffc-4e34-8a95-eb952049bf85 | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 13:41:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:41:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:41:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_nsd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_nsd ? Cancel Ok'[0m
+2026-08-14 13:41:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_nsd'.[0m
+2026-08-14 13:41:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for NSD Package 'epdg_dp_node11_nsd' (No active toast pop-up captured).[0m
+2026-08-14 13:41:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 13:41:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 13:41:44 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 13:41:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 13:41:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:41:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 13:41:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | 396644b7-d88c-4cfa-8bc7-1a0e8a22de69 | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 13:41:48 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:41:49 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:41:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_vnfd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_vnfd ? Cancel Ok'[0m
+2026-08-14 13:41:51 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 13:42:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for VNFD Package 'epdg_dp_node11_vnfd' (No active toast pop-up captured).[0m
+2026-08-14 13:42:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 13:42:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 13:42:21 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 13:42:27 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 13:42:28 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 13:42:28 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 13:42:28 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 13:42:28 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 13:42:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 13:42:39 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 13:42:39 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 13:42:41 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-425aa624-0660-48c8-b04e-96053dffe533)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 13:42:41 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 13:42:41 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:42:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 13:42:43 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 13:42:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 13:42:43 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m
+2026-08-14 13:45:19 - [INFO] - [test_01_verify_cleanup_variables] [96mExecuting Step 01: Verifying configuration variables for cleanup...[0m
+2026-08-14 13:45:19 - [INFO] - [test_01_verify_cleanup_variables] [96mTarget TEOSM Instance: 'epdg_dp_node11', Target Cloud Image: 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:45:19 - [INFO] - [test_01_verify_cleanup_variables] [96mPRODUCTION SAFETY SWITCH: DRY_RUN = False (REAL DELETIONS ENABLED)[0m
+2026-08-14 13:45:19 - [INFO] - [test_01_verify_cleanup_variables] [92m✔ SUCCESS: Step 01: All cleanup configuration parameters parsed and validated.[0m
+2026-08-14 13:45:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-14 13:45:19 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-14 13:45:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-14 13:45:20 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-14 13:45:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting Step 02 (FIRST): TEOSM Web GUI Login and Resource Cleanup via Selenium...[0m
+2026-08-14 13:45:23 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to TEOSM GUI URL: https://localhost:9998/login[0m
+2026-08-14 13:45:33 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI username: admin[0m
+2026-08-14 13:45:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered TEOSM GUI password.[0m
+2026-08-14 13:45:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSubmitted TEOSM GUI login form.[0m
+2026-08-14 13:45:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mPost-login TEOSM GUI URL: https://localhost:9998/[0m
+2026-08-14 13:45:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage A: NS Instance Cleanup ---[0m
+2026-08-14 13:45:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Instances' -> 'NS Instances' (Expecting breadcrumb keyword: 'NS Instances')...[0m
+2026-08-14 13:45:46 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Instances' to access 'NS Instances'...[0m
+2026-08-14 13:45:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Instances'[0m
+2026-08-14 13:45:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11'...[0m
+2026-08-14 13:45:50 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11'[0m
+2026-08-14 13:46:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRow containing target name 'epdg_dp_node11' not present in table.[0m
+2026-08-14 13:46:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNS instance 'epdg_dp_node11' not present in TEOSM GUI table.[0m
+2026-08-14 13:46:02 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m[TEOSM_CLI] Executing (timeout=600s): osm ns-list | grep -i 'epdg_dp_node11'[0m
+2026-08-14 13:46:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage B: NS Package (NSD) Cleanup ---[0m
+2026-08-14 13:46:03 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'NS Packages' (Expecting breadcrumb keyword: 'NS Packages')...[0m
+2026-08-14 13:46:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExpanding parent menu 'Packages' to access 'NS Packages'...[0m
+2026-08-14 13:46:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   NS Packages'[0m
+2026-08-14 13:46:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:46:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_nsd'[0m
+2026-08-14 13:46:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_nsd' confirmed in table row text: 'epdg_dp_node11_nsd | 154d8179-ff16-4eed-9877-f48f78365040 | 1.0 | TATA ELXSI | epdg_dp_node11_nsd Network Service | Action'[0m
+2026-08-14 13:46:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified NSD package 'epdg_dp_node11_nsd'...[0m
+2026-08-14 13:46:11 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:46:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_nsd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_nsd ? Cancel Ok'[0m
+2026-08-14 13:46:13 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_nsd'.[0m
+2026-08-14 13:46:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for NSD Package 'epdg_dp_node11_nsd' (No active toast pop-up captured).[0m
+2026-08-14 13:46:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted NSD package 'epdg_dp_node11_nsd' via TEOSM GUI.[0m
+2026-08-14 13:46:53 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRe-searching table for target item 'epdg_dp_node11_nsd' to verify deletion...[0m
+2026-08-14 13:46:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED POST-DELETION REMOVAL: Target item 'epdg_dp_node11_nsd' re-searched and confirmed removed. Table displays: 'No data available in table'[0m
+2026-08-14 13:47:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m--- Stage C: VNF Package (VNFD) Cleanup ---[0m
+2026-08-14 13:47:05 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNavigating to section: 'Packages' -> 'VNF Packages' (Expecting breadcrumb keyword: 'VNF Packages')...[0m
+2026-08-14 13:47:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED BREADCRUMB-HOLDER: 'Dashboard   Projects   admin   VNF Packages'[0m
+2026-08-14 13:47:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mSearching table for target item: 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:47:08 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mEntered search query: 'epdg_dp_node11_vnfd'[0m
+2026-08-14 13:47:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED ROW MATCH: Target name 'epdg_dp_node11_vnfd' confirmed in table row text: 'epdg_dp_node11_vnfd | eabcaf65-7d45-4ae4-9b15-13aed1b334de | 1.0 | TATA ELXSI | vnfd | epdg_dp_node11 VNFD package enabled with Day-0 and Service Assurance | Action'[0m
+2026-08-14 13:47:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mExecuting right-side Delete icon click for verified VNFD package 'epdg_dp_node11_vnfd'...[0m
+2026-08-14 13:47:10 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked TEOSM right-side row Delete icon (<i class='far fa-trash-alt icons'></i>).[0m
+2026-08-14 13:47:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED MODAL POP-UP TEXT: Target resource 'epdg_dp_node11_vnfd' confirmed in modal window message: 'Delete Are you sure want to delete epdg_dp_node11_vnfd ? Cancel Ok'[0m
+2026-08-14 13:47:12 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Clicked NGB modal confirmation button (/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]) for 'epdg_dp_node11_vnfd'.[0m
+2026-08-14 13:47:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mNotification log search completed for VNFD Package 'epdg_dp_node11_vnfd' (No active toast pop-up captured).[0m
+2026-08-14 13:47:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ Successfully deleted VNFD package 'epdg_dp_node11_vnfd' via TEOSM GUI.[0m
+2026-08-14 13:47:43 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mRe-searching table for target item 'epdg_dp_node11_vnfd' to verify deletion...[0m
+2026-08-14 13:47:45 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96m✔ VERIFIED POST-DELETION REMOVAL: Target item 'epdg_dp_node11_vnfd' re-searched and confirmed removed. Table displays: 'No data available in table'[0m
+2026-08-14 13:47:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [92m✔ SUCCESS: Step 02: TEOSM GUI menu navigation, breadcrumb validation, row name verification, and resource cleanup executed successfully.[0m
+2026-08-14 13:47:55 - [INFO] - [test_02_teosm_gui_login_and_cleanup] [96mClosing Selenium WebDriver...[0m
+2026-08-14 13:47:55 - [INFO] - [test_03_cloud_cli_cleanup] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-14 13:47:56 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-14 13:47:56 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting Step 03 (SECOND): Cloud Volume and Image Cleanup strictly via OpenStack CLI (No GUI)...[0m
+2026-08-14 13:47:56 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying volume list on CLOUD_CLI for volumes matching 'epdg_dp_node11' or 'EPDGDP-3.1.0_automation'...[0m
+2026-08-14 13:47:56 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume list[0m
+2026-08-14 13:48:00 - [INFO] - [test_03_cloud_cli_cleanup] [96mFound volume ID(s): ['be07736e-037f-4ead-bd0f-6b5d3f995b85'][0m
+2026-08-14 13:48:00 - [INFO] - [test_03_cloud_cli_cleanup] [96mExecuting 'openstack volume delete be07736e-037f-4ead-bd0f-6b5d3f995b85' on CLOUD_CLI...[0m
+2026-08-14 13:48:00 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack volume delete 'be07736e-037f-4ead-bd0f-6b5d3f995b85'[0m
+2026-08-14 13:48:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mVolume delete CLI output: Failed to delete volume with name or ID 'be07736e-037f-4ead-bd0f-6b5d3f995b85': Invalid volume: Volume status must be available or error or error_restoring or error_extending or error_managing and must not be migrating, attached, belong to a group, have snapshots or be disassociated from snapshots after volume transfer. (HTTP 400) (Request-ID: req-94802cc5-26e0-45c3-b894-210e40f76605)
+1 of 1 volumes failed to delete.
+ / [0m
+2026-08-14 13:48:06 - [INFO] - [test_03_cloud_cli_cleanup] [96mQuerying OpenStack image 'EPDGDP-3.1.0_automation' on CLOUD_CLI...[0m
+2026-08-14 13:48:06 - [INFO] - [test_03_cloud_cli_cleanup] [96m[CLOUD_CLI] Executing (timeout=120s): openstack image show 'EPDGDP-3.1.0_automation'[0m
+2026-08-14 13:48:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mOpenStack image 'EPDGDP-3.1.0_automation' not present on CLOUD_CLI.[0m
+2026-08-14 13:48:09 - [INFO] - [test_03_cloud_cli_cleanup] [92m✔ SUCCESS: Step 03: Cloud volume and image cleanup discovery completed strictly via CLI.[0m
+2026-08-14 13:48:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to CLOUD_CLI[0m
+2026-08-14 13:48:09 - [INFO] - [test_03_cloud_cli_cleanup] [96mClosed connection to TEOSM_CLI[0m

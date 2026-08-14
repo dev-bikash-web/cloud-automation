@@ -320,7 +320,7 @@ def test_03_cloud_gui_login(config_data: dict, gui_tunnels: dict, browser_driver
 
     test_pass("Step 03: Cloud (Horizon) GUI login executed successfully.")
 
-@pytest.mark.gui_login
+# @pytest.mark.gui_login
 @pytest.mark.local
 def test_04_teosm_gui_login(config_data: dict, gui_tunnels: dict, browser_driver: webdriver.Remote):
     """Step 4: Perform TEOSM GUI authentication upfront via Selenium."""

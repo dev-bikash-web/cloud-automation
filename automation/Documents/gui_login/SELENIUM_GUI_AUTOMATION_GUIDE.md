@@ -136,29 +136,49 @@ The test suite consists of 4 sequential steps tagged with `@pytest.mark.gui_logi
 | `test_02_verify_ssh_tunnels` | `gui_login`, `local` | Verify TCP sockets on ports 9999 & 9998 | `pytest tests/test_gui_login.py` | **PASS** |
 | `test_03_cloud_gui_login` | `gui_login`, `local` | Horizon GUI login & redirect check | `pytest tests/test_gui_login.py` | **PASS** |
 | `test_04_teosm_gui_login` | `gui_login`, `local` | TEOSM GUI login & redirect check | `pytest tests/test_gui_login.py` | **PASS** |
-| `gui_tunnels` (Teardown) | Module Fixture | Terminate background SSH tunnel PIDs | `pytest tests/test_gui_login.py` | **PASS** |
-| `browser_driver` (Teardown) | Function Fixture | Quit Selenium WebDriver processes | `pytest tests/test_gui_login.py` | **PASS** |
+| `test_01_verify_cleanup_variables` | `clean_teosm_gui_cloud_volume_image`, `local` | Validate cleanup keys & print `DRY_RUN` safety mode | `pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py` | **PASS** |
+| `test_02_teosm_gui_login_and_cleanup` | `clean_teosm_gui_cloud_volume_image`, `local` | FIRST: TEOSM Web GUI login, menu navigation (`Instances` -> `NS Instances`, `Packages` -> `NS Packages`, `Packages` -> `VNF Packages`), row name text verification, deletion execution, & GUI notification log capture | `pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py` | **PASS** |
+| `test_03_cloud_cli_cleanup` | `clean_teosm_gui_cloud_volume_image`, `remote` | SECOND: Query volume info on `CLOUD_CLI` & discover/delete Cloud volume & image via CLI (No GUI) | `pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py` | **PASS** |
+| `teosm_tunnel` (Teardown) | Module Fixture | Terminate background TEOSM SSH tunnel PID | `pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py` | **PASS** |
+| `browser_driver` (Teardown) | Function Fixture | Quit Selenium WebDriver processes | `pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py` | **PASS** |
+
+### TEOSM Menu Navigation, Breadcrumb, Modal, Toast Log & Re-Search Assertion Pipeline
+Inside [`automation/tests/test_gui_cleanup.py`](file:///home/bikash/workera/personal_git/cloud-automation/automation/tests/test_gui_cleanup.py):
+1. **Stage A (NS Instances)**: Navigates to `Instances` $\rightarrow$ `NS Instances`, validates DOM `breadcrumb-holder` (`Dashboard > Projects > admin > NS Instances`), enters search query `<TEOSM_INSTANCE_NAME>`, verifies target row text, clicks right-side Delete icon (`<i class="far fa-trash-alt icons"></i>`), renders Angular modal container (`/html/body/ngb-modal-window/div/div/app-delete`), verifies target instance name in modal message, clicks confirmation button (`/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]`), polls DOM for notification toast logs, **waits 60 seconds (1 minute)** for background teardown, and **re-searches `<TEOSM_INSTANCE_NAME>` confirming table displays `No data available in table`**.
+2. **Stage B (NS Packages / NSD)**: Navigates to `Packages` $\rightarrow$ `NS Packages`, validates DOM `breadcrumb-holder` (`Dashboard > Projects > admin > NS Packages`), enters search query `<TEOSM_INSTANCE_NAME>_nsd`, verifies target row text, clicks right-side Delete icon (`<i class="far fa-trash-alt icons"></i>`), renders Angular modal container (`/html/body/ngb-modal-window/div/div/app-delete`), verifies target NSD name in modal message, clicks confirmation button (`/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]`), polls DOM for notification logs, and **re-searches `<TEOSM_INSTANCE_NAME>_nsd` confirming table displays `No data available in table`**.
+3. **Stage C (VNF Packages / VNFD)**: Navigates to `Packages` $\rightarrow$ `VNF Packages`, validates DOM `breadcrumb-holder` (`Dashboard > Projects > admin > VNF Packages`), enters search query `<TEOSM_INSTANCE_NAME>_vnfd`, verifies target row text, clicks right-side Delete icon (`<i class="far fa-trash-alt icons"></i>`), renders Angular modal container (`/html/body/ngb-modal-window/div/div/app-delete`), verifies target VNFD name in modal message, clicks confirmation button (`/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]`), polls DOM for notification logs, and **re-searches `<TEOSM_INSTANCE_NAME>_vnfd` confirming table displays `No data available in table`**.
+
+### Global Production Safety Switch (`DRY_RUN`)
+Inside [`automation/tests/test_gui_cleanup.py`](file:///home/bikash/workera/personal_git/cloud-automation/automation/tests/test_gui_cleanup.py):
+- **`DRY_RUN = True` (Default / Safe Dry-Run Mode)**: Executes full GUI authentication and resource discovery (NS instances, NSD, VNFD, volumes, images), logging exact target IDs without executing destructive clicks or CLI delete commands.
+- **`DRY_RUN = False` (Active Mode)**: Performs real destructive deletions on TEOSM and Cloud.
 
 ### 6.2 Sample Passing Execution Output
 
 ```text
 ====================== AUTOMATION SUITE EXECUTION SUMMARY ======================
-✔ SUCCESS: All 4 test case(s) passed for marker 'all'!
-=======================================  =======================================
-=================== 4 passed, 4 warnings in 68.65s (0:01:08) ===================
+✔ SUCCESS: All 3 test case(s) passed for marker 'clean_teosm_gui_cloud_volume_image'!
+================================ liquid log ====================================
+=================== 3 passed, 6 warnings in 65.53s (0:01:05) ===================
 ```
 
 ---
 
-## 7. How to Run the GUI Test Suite
+## 7. How to Run the GUI Test Suites
 
-Execute the GUI login test suite using standard pytest:
+Execute the GUI test suites using standard pytest:
 
 ```bash
 # Run GUI Login test suite directly
 pytest tests/test_gui_login.py
 
+# Run Cleanup test suite using the custom marker
+pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py
+
 # Run with verbose live console logs
+pytest -m clean_teosm_gui_cloud_volume_image tests/test_gui_cleanup.py -o log_cli=true
+
+# Run Login suite with verbose live console logs
 pytest tests/test_gui_login.py -o log_cli=true
 
 # Filter tests by keyword
