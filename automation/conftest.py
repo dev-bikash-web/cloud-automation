@@ -23,9 +23,18 @@ def config_data() -> Dict[str, str]:
     Provides cached configuration dictionary to any test case on demand.
     """
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    var_file = os.path.join(base_dir, "variables.txt")
-    if not os.path.exists(var_file):
-        raise FileNotFoundError(f"Configuration file missing: {var_file}")
+    candidate_paths = [
+        os.path.join(base_dir, "variables", "teosm_node_launch", "variables.txt"),
+        os.path.join(base_dir, "variables.txt")
+    ]
+    var_file = None
+    for p in candidate_paths:
+        if os.path.exists(p):
+            var_file = p
+            break
+
+    if not var_file:
+        raise FileNotFoundError(f"Configuration file 'variables.txt' missing from candidate paths: {candidate_paths}")
     
     return ConfigParser.parse(var_file)
 

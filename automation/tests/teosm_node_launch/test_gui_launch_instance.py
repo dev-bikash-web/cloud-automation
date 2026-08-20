@@ -17,7 +17,7 @@ from automation_framework.node import SSHNode
 from automation_framework.logger import log_info, test_pass, test_fail
 
 # Import helper functions from test_gui_login
-from tests.test_gui_login import is_port_open, parse_ssh_tunnel_cmd, create_browser_driver
+from tests.teosm_node_launch.test_gui_login import is_port_open, parse_ssh_tunnel_cmd, create_browser_driver
 
 # ==============================================================================
 # GLOBAL PRODUCTION SAFETY SWITCH
