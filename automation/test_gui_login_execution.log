@@ -211,3 +211,71 @@
 2026-08-14 12:05:28 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
 2026-08-14 12:05:28 - [INFO] - [test_03_cloud_gui_login] [96mClosing Selenium WebDriver...[0m
 2026-08-14 12:05:28 - [INFO] - [test_03_cloud_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-20 11:16:53 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-20 11:16:53 - [INFO] - [test_01_verify_gui_variables] [96mConfigured browser: 'firefox', Headless mode: 'false'[0m
+2026-08-20 11:16:53 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-20 11:16:53 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-20 11:16:53 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-20 11:16:56 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-20 11:16:56 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-20 11:16:56 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-20 11:16:56 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-20 11:16:56 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-20 11:17:10 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-20 11:17:13 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/project/[0m
+2026-08-20 11:17:13 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-20 11:17:13 - [INFO] - [test_03_cloud_gui_login] [96mClosing Selenium WebDriver...[0m
+2026-08-20 11:17:13 - [INFO] - [test_03_cloud_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-20 11:18:48 - [INFO] - [test_01_verify_gui_variables] [96m✔ RESOLVED CONFIGURATION FILE FOR 'test_gui_login.py': '/home/bikash/workera/personal_git/cloud-automation/automation/tests/teosm_node_launch/variables.txt'[0m
+2026-08-20 11:18:48 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-20 11:18:48 - [INFO] - [test_01_verify_gui_variables] [96mConfigured browser: 'firefox', Headless mode: 'false'[0m
+2026-08-20 11:18:48 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-20 11:18:48 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-20 11:18:48 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-20 11:18:50 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-20 11:18:50 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-20 11:18:51 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-20 11:18:51 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-20 11:18:51 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-20 11:19:06 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-20 11:19:09 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-20 11:19:09 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-20 11:19:09 - [INFO] - [test_03_cloud_gui_login] [96mClosing Selenium WebDriver...[0m
+2026-08-20 11:19:09 - [INFO] - [test_03_cloud_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [96m✔ RESOLVED CONFIGURATION FILE FOR 'test_gui_login.py': '/home/bikash/workera/personal_git/cloud-automation/automation/tests/teosm_node_launch/variables.txt'[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [96m================= TEST CASE EXECUTION ==================[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [96mExecuting Step 01: Verifying GUI variables in configuration...[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [96mConfigured browser: 'firefox', Headless mode: 'false'[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [92m✔ SUCCESS: Step 01: All GUI parameters successfully parsed and validated from variables.txt.[0m
+2026-08-20 11:28:57 - [INFO] - [test_01_verify_gui_variables] [96m================== POST-TEST CLEANUP ===================[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m[CLOUD_GUI] Tunnel port 9999 is already listening.[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m[TEOSM_GUI] Tunnel port 9998 is already listening.[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m================= TEST CASE EXECUTION ==================[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96mExecuting Step 02: Verifying SSH tunnel TCP socket connectivity...[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9999 (CLOUD_GUI) is active and listening.[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m✔ TCP socket port 9998 (TEOSM_GUI) is active and listening.[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [92m✔ SUCCESS: Step 02: All required GUI SSH tunnel sockets verified active.[0m
+2026-08-20 11:28:57 - [INFO] - [test_02_verify_ssh_tunnels] [96m================== POST-TEST CLEANUP ===================[0m
+2026-08-20 11:28:57 - [INFO] - [test_03_cloud_gui_login] [96mInitializing Selenium WebDriver (Browser: 'firefox', Headless: False)...[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96m================= TEST CASE EXECUTION ==================[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96mExecuting Step 03: Cloud (Horizon) GUI Login verification...[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96mNavigating to Cloud GUI URL: http://localhost:9999/horizon/auth/login/[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96mEntered domain: default[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96mEntered username: admin[0m
+2026-08-20 11:29:00 - [INFO] - [test_03_cloud_gui_login] [96mEntered password.[0m
+2026-08-20 11:29:13 - [INFO] - [test_03_cloud_gui_login] [96mClicked submit button on Cloud GUI login form.[0m
+2026-08-20 11:29:16 - [INFO] - [test_03_cloud_gui_login] [96mCurrent post-submit URL: http://localhost:9999/horizon/project/[0m
+2026-08-20 11:29:16 - [INFO] - [test_03_cloud_gui_login] [92m✔ SUCCESS: Step 03: Cloud (Horizon) GUI login executed successfully.[0m
+2026-08-20 11:29:16 - [INFO] - [test_03_cloud_gui_login] [96m================== POST-TEST CLEANUP ===================[0m
+2026-08-20 11:29:16 - [INFO] - [test_03_cloud_gui_login] [96mClosing Selenium WebDriver...[0m
+2026-08-20 11:29:17 - [INFO] - [test_03_cloud_gui_login] [96m[Teardown] Terminating spawned SSH tunnel processes...[0m

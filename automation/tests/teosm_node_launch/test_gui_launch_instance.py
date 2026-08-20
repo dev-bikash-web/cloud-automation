@@ -406,6 +406,8 @@ def verify_instance_detailed_status(driver: webdriver.Remote, instance_name: str
 def test_01_verify_launch_variables(config_data: dict):
     """Step 1: Validate required configuration parameters for launching NS instance."""
     log_info("Executing Step 01: Verifying configuration variables for TEOSM instance launch...")
+    if "_CONFIG_FILE_PATH" in config_data:
+        log_info(f"Loaded variables from file: '{config_data['_CONFIG_FILE_PATH']}'")
     required_keys = [
         "TEOSM_GUI_URL", "TEOSM_GUI_USER_NAME", "TEOSM_GUI_USER_PASS", "TEOSM_GUI",
         "TEOSM_INSTANCE_NAME"

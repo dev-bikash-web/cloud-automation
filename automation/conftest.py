@@ -5,7 +5,7 @@ from typing import Dict, Callable, Tuple, Optional
 
 from automation_framework.config import ConfigParser
 from automation_framework.node import SSHNode
-from automation_framework.logger import test_pass as logger_test_pass, test_fail as logger_test_fail
+from automation_framework.logger import log_info, test_pass as logger_test_pass, test_fail as logger_test_fail
 
 def get_or_create_event_loop() -> asyncio.AbstractEventLoop:
     """Helper to retrieve or create an active asyncio event loop."""
@@ -16,28 +16,39 @@ def get_or_create_event_loop() -> asyncio.AbstractEventLoop:
         asyncio.set_event_loop(loop)
         return loop
 
-@pytest.fixture(scope="session")
-def config_data() -> Dict[str, str]:
+@pytest.fixture(scope="module")
+def config_data(request) -> Dict[str, str]:
     """
-    Session-scoped fixture parsing variables.txt ONCE per test run.
-    Provides cached configuration dictionary to any test case on demand.
+    Module-scoped fixture dynamically locating variables.txt in the directory
+    of the executing test module file. If missing, traverses parent directories.
     """
+    test_file_path = str(request.path) if hasattr(request, "path") else str(request.fspath)
+    test_dir = os.path.dirname(os.path.abspath(test_file_path))
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    candidate_paths = [
-        os.path.join(base_dir, "tests", "teosm_node_launch", "variables.txt"),
-        os.path.join(base_dir, "variables", "teosm_node_launch", "variables.txt"),
-        os.path.join(base_dir, "variables.txt")
-    ]
+
+    curr_dir = test_dir
     var_file = None
-    for p in candidate_paths:
-        if os.path.exists(p):
-            var_file = p
+
+    while True:
+        candidate = os.path.join(curr_dir, "variables.txt")
+        if os.path.exists(candidate):
+            var_file = candidate
             break
+        if curr_dir == base_dir or curr_dir == os.path.dirname(curr_dir):
+            break
+        curr_dir = os.path.dirname(curr_dir)
 
     if not var_file:
-        raise FileNotFoundError(f"Configuration file 'variables.txt' missing from candidate paths: {candidate_paths}")
-    
-    return ConfigParser.parse(var_file)
+        raise FileNotFoundError(
+            f"Configuration file 'variables.txt' missing from test directory '{test_dir}' and ancestor paths."
+        )
+
+    abs_var_file = os.path.abspath(var_file)
+    log_info(f"✔ RESOLVED CONFIGURATION FILE FOR '{os.path.basename(test_file_path)}': '{abs_var_file}'")
+
+    parsed = ConfigParser.parse(abs_var_file)
+    parsed["_CONFIG_FILE_PATH"] = abs_var_file
+    return parsed
 
 @pytest.fixture(scope="session")
 def parse_credentials() -> Callable[[str, int], Tuple[Optional[str], Optional[str], int]]:
@@ -86,6 +97,18 @@ def test_pass() -> Callable[[str], None]:
 def test_fail() -> Callable[[str], None]:
     """Session-scoped fixture providing test_fail(msg) helper."""
     return logger_test_fail
+
+def pytest_runtest_setup(item):
+    """Lifecycle hook: Emits PRE-TEST SETUP log header."""
+    log_info(" PRE-TEST SETUP ".center(60, "="))
+
+def pytest_runtest_call(item):
+    """Lifecycle hook: Emits TEST CASE EXECUTION log header."""
+    log_info(" TEST CASE EXECUTION ".center(60, "="))
+
+def pytest_runtest_teardown(item):
+    """Lifecycle hook: Emits POST-TEST CLEANUP log header."""
+    log_info(" POST-TEST CLEANUP ".center(60, "="))
 
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
     """
