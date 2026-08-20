@@ -24,6 +24,7 @@ def config_data() -> Dict[str, str]:
     """
     base_dir = os.path.dirname(os.path.abspath(__file__))
     candidate_paths = [
+        os.path.join(base_dir, "tests", "teosm_node_launch", "variables.txt"),
         os.path.join(base_dir, "variables", "teosm_node_launch", "variables.txt"),
         os.path.join(base_dir, "variables.txt")
     ]
