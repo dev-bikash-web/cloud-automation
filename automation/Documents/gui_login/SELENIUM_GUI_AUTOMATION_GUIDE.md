@@ -148,8 +148,16 @@ Inside [`automation/tests/test_gui_cleanup.py`](file:///home/bikash/workera/pers
 2. **Stage B (NS Packages / NSD)**: Navigates to `Packages` $\rightarrow$ `NS Packages`, validates DOM `breadcrumb-holder` (`Dashboard > Projects > admin > NS Packages`), enters search query `<TEOSM_INSTANCE_NAME>_nsd`, verifies target row text, clicks right-side Delete icon (`<i class="far fa-trash-alt icons"></i>`), renders Angular modal container (`/html/body/ngb-modal-window/div/div/app-delete`), verifies target NSD name in modal message, clicks confirmation button (`/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]`), polls DOM for notification logs, and **re-searches `<TEOSM_INSTANCE_NAME>_nsd` confirming table displays `No data available in table`**.
 3. **Stage C (VNF Packages / VNFD)**: Navigates to `Packages` $\rightarrow$ `VNF Packages`, validates DOM `breadcrumb-holder` (`Dashboard > Projects > admin > VNF Packages`), enters search query `<TEOSM_INSTANCE_NAME>_vnfd`, verifies target row text, clicks right-side Delete icon (`<i class="far fa-trash-alt icons"></i>`), renders Angular modal container (`/html/body/ngb-modal-window/div/div/app-delete`), verifies target VNFD name in modal message, clicks confirmation button (`/html/body/ngb-modal-window/div/div/app-delete/div[3]/button[2]`), polls DOM for notification logs, and **re-searches `<TEOSM_INSTANCE_NAME>_vnfd` confirming table displays `No data available in table`**.
 
-### Global Production Safety Switch (`DRY_RUN`)
-Inside [`automation/tests/test_gui_cleanup.py`](file:///home/bikash/workera/personal_git/cloud-automation/automation/tests/test_gui_cleanup.py):
+### TEOSM NS Instance Launch Automation Pipeline
+Inside [`automation/tests/test_gui_launch_instance.py`](file:///home/bikash/workera/personal_git/cloud-automation/automation/tests/test_gui_launch_instance.py):
+1. **Login & Navigation**: Authenticates to TEOSM Web Portal, navigates to `Instances` $\rightarrow$ `NS Instances`, and verifies active breadcrumb header (`Dashboard > Projects > admin > NS Instances`).
+2. **Top-Right `New NS` Button Click**: Locates and clicks the `New NS` button on the top right side of the page.
+3. **Form Instantiation Parameters**:
+   - **`Ns Name`**: Enters `<TEOSM_INSTANCE_NAME>` as specified in `variables.txt`.
+   - **`Description`**: Enters `<TEOSM_INSTANCE_NAME>` (same as Ns Name).
+   - **`NSD Id`**: Selects target NSD ID matching `<TEOSM_INSTANCE_NAME>_nsd` from Angular `<ng-select>` dropdown.
+   - **`VIM Account`**: Selects target VIM Account matching `<COMPUTE_NAME>` (e.g. `COMPUTE_NAME` / `openstack`) from Angular `<ng-select>` dropdown.
+4. **Create Submission & Toast Log Verification**: Clicks the `Create` button on the form, polls DOM for notification logs, and asserts no error keywords.
 - **`DRY_RUN = True` (Default / Safe Dry-Run Mode)**: Executes full GUI authentication and resource discovery (NS instances, NSD, VNFD, volumes, images), logging exact target IDs without executing destructive clicks or CLI delete commands.
 - **`DRY_RUN = False` (Active Mode)**: Performs real destructive deletions on TEOSM and Cloud.
 

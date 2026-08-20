@@ -1,0 +1,17 @@
+# Ignore large binary packages and image archives
+*.tar.gz
+*.qcow2
+*.zip
+*.iso
+*.img
+*.bin
+
+# Ignore log files
+*.log
+automation/*.log
+
+# Ignore Python bytecode and pytest cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

@@ -183,3 +183,746 @@ Volume of CFW Node1 named epdgdp_189 already created. So, skipping creation ...
 2026-08-13 10:21:00 - [INFO] - [test_11_run_venv_teosm] [92m✔ SUCCESS: Step 11: venv.sh executed successfully and uploaded both VNFD and NSD packages to OSM.[0m
 2026-08-13 10:21:00 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to TEOSM_CLI[0m
 2026-08-13 10:21:00 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to CLOUD_CLI[0m
+2026-08-17 09:48:51 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 09:48:51 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 09:48:51 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 09:48:52 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 09:48:52 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/VAL' && test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' on CLOUD_CLI.[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 09:48:54 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 09:48:54 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 09:48:54 - [ERROR] - [test_03_copy_stuffs_to_cloud] [91m✖ ERROR: No .qcow2 files found in /home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs[0m
+2026-08-17 09:54:10 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 09:54:10 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 09:54:10 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 09:54:11 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 09:54:11 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: CLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' verified on CLOUD_CLI.[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 09:54:12 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 09:54:12 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 09:54:12 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/VAL/NFV'...[0m
+2026-08-17 09:54:13 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 09:54:58 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 09:54:58 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 09:54:59 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/attach_volumes_template.sh'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/configure_cfw.sh'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/nsd_template.yaml'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/helper.sh'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/os_hardening_audit_rules'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/vol_creation_template.sh'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/replacevars.sh'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/ns_param_template.yaml'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/auto_config.py'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/volumeservice'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfg_validation.py'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/interface_vf.xml'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 09:55:00 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 09:55:00 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/VAL/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 09:55:00 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 09:55:00 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 09:55:00 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 09:55:00 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 09:55:00 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 09:55:00 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 09:55:00 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 09:55:00 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 09:55:00 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL' --disk-format qcow2 --file '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 09:55:10 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: '5bcdd07f-f31a-4902-bf05-55a367705735'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 09:56:10 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show '5bcdd07f-f31a-4902-bf05-55a367705735'[0m
+2026-08-17 09:56:12 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 09:56:12 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL' (ID: 5bcdd07f-f31a-4902-bf05-55a367705735) is active.[0m
+2026-08-17 09:56:13 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 09:56:13 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/VAL/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 09:56:24 - [INFO] - [test_08_run_replacevars_cloud] [92m✔ SUCCESS: Step 08: replacevars.sh executed successfully and created new volume.[0m
+2026-08-17 09:56:24 - [INFO] - [test_09_run_clean_teosm] [96mExecuting Step 09: Run clean.sh on TEOSM_CLI...[0m
+2026-08-17 09:56:24 - [INFO] - [test_09_run_clean_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./clean.sh && ./clean.sh[0m
+2026-08-17 09:56:24 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '.+'[0m
+2026-08-17 09:56:24 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: Step 09: clean.sh executed successfully on TEOSM_CLI.[0m
+2026-08-17 09:56:24 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mExecuting Step 10: Dynamically edit creds.cfg on TEOSM_CLI...[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && cp '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg' '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg.bak'[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mUpdated creds.cfg: Tosca_template_path -> '/home/cdot/CFW/VAL/NFV/generated_vnf_ns', node key 'epdg_dp_node11' -> 'epdg_dp_node11'[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '"epdg_dp_node11"' creds.cfg[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '\"epdg_dp_node11\"'[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '/home/cdot/CFW/VAL/NFV/generated_vnf_ns' creds.cfg[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '/home/cdot/CFW/VAL/NFV/generated_vnf_ns'[0m
+2026-08-17 09:56:25 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: Step 10: Successfully updated node key and Tosca_template_path in creds.cfg on TEOSM_CLI.[0m
+2026-08-17 09:56:25 - [INFO] - [test_11_run_venv_teosm] [96mExecuting Step 11: Run venv.sh on TEOSM_CLI...[0m
+2026-08-17 09:56:25 - [INFO] - [test_11_run_venv_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./venv.sh && ./venv.sh 'epdg_dp_node11'[0m
+2026-08-17 09:56:31 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: [TEOSM_CLI] Regex pattern '.*_vnf\.tar\.gz\s+Uploaded\s+successfully[\s\S]*.*_nsd\.tar\.gz\s+Uploaded\s+successfully' failed to match output!
+--- Output Start ---
+
+Checking if virtualenv package present in system
+Already virtualenv installed. Using the same version
+
+Step -2 : Create the virtual environment
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python3
+Also creating executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 703, in main
+    create_environment(home_dir,
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 923, in create_environment
+    py_executable = os.path.abspath(install_python(
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1419, in install_python
+    fix_local_scheme(home_dir, symlink)
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1502, in fix_local_scheme
+    if sysconfig._get_default_scheme() == 'posix_local':
+AttributeError: module 'sysconfig' has no attribute '_get_default_scheme'. Did you mean: 'get_default_scheme'?
+
+Step -3:  Activating the virtual environment
+./venv.sh: line 15: virtenv/bin/activate: No such file or directory
+
+Step -4: Install the requirements
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: ../packages/
+Requirement already satisfied: bcrypt==3.2.0 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 1)) (3.2.0)
+Requirement already satisfied: cffi==1.15.1 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: configparser==5.0.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (5.0.2)
+Requirement already satisfied: cryptography==3.4.8 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 4)) (3.4.8)
+Requirement already satisfied: paramiko==2.7.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 5)) (2.7.2)
+Requirement already satisfied: pycparser==2.21 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 7)) (2.21)
+Requirement already satisfied: PyNaCl==1.5.0 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 8)) (1.5.0)
+Requirement already satisfied: ruamel.yaml==0.17.4 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 9)) (0.17.4)
+Requirement already satisfied: ruamel.yaml.clib==0.2.7 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 10)) (0.2.7)
+Requirement already satisfied: six==1.16.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 11)) (1.16.0)
+Requirement already satisfied: requests==2.31.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 12)) (2.31.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2.0.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2023.5.7)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.2.0)
+
+Step -5: Removing the trailing spaces from cfg file
+
+Step -6: Run the code
+epdgdp
+{'epdg_dp_node11': 'new_test_node1.yaml'}
+{'epdg_dp_node11': 'new_test_node1.yaml'}
+##  Populating the epdg_dp.json file from input cfg  ##
+
+Checking if vnfd is present
+Fetched the authorization token
+Connecting to the server to fetch template file details
+
+....Connected successfully
+
+('Error occured while template change', FileNotFoundError(2, 'No such file'))
+
+Step -7: Deactivate the venv
+./venv.sh: line 31: deactivate: command not found
+
+Step -8: Removing the virtenv directory
+
+--- Output End ---[0m
+2026-08-17 09:56:31 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: Step 11 FAILED: venv.sh execution failed or package upload confirmations missing.[0m
+2026-08-17 09:56:31 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to TEOSM_CLI[0m
+2026-08-17 09:56:31 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to CLOUD_CLI[0m
+2026-08-17 10:02:58 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 10:02:58 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 10:02:58 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 10:02:59 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 10:02:59 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/VAL' && test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' on CLOUD_CLI.[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 10:03:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 10:03:00 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 10:03:00 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/VAL/NFV'...[0m
+2026-08-17 10:03:01 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 10:03:46 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 10:03:46 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 10:03:47 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/attach_volumes_template.sh'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/configure_cfw.sh'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/nsd_template.yaml'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/helper.sh'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/os_hardening_audit_rules'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/vol_creation_template.sh'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/replacevars.sh'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/ns_param_template.yaml'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/auto_config.py'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/volumeservice'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfg_validation.py'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/interface_vf.xml'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 10:03:48 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 10:03:48 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/VAL/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 10:03:48 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 10:03:48 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 10:03:48 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 10:03:48 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 10:03:48 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 10:03:48 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 10:03:48 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 10:03:48 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 10:03:48 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL' --disk-format qcow2 --file '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 10:03:59 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: '5ae712d0-792b-41e8-bb92-03fd54b9eb7b'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 10:04:59 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show '5ae712d0-792b-41e8-bb92-03fd54b9eb7b'[0m
+2026-08-17 10:05:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 10:05:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL' (ID: 5ae712d0-792b-41e8-bb92-03fd54b9eb7b) is active.[0m
+2026-08-17 10:05:01 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 10:05:01 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/VAL/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 10:05:04 - [ERROR] - [test_08_run_replacevars_cloud] [91m✖ ERROR: replacevars.sh FAILED: Volume already exists on CLOUD_CLI! Skipping creation detected.
+Output:
+[0;33m********************
+* ./replacevars.sh *
+********************
+[0m
+Checking configuration file
+Node is EPDGDP, running config validation for EPDGDP
+Configuration file is OK
+CAUTION: Please ensure [0;31mwigw_config.cfg[0m is modified to run CFW nodes![0;31m
+  Hit 'Ctrl+C' to EXIT, if not done
+  Hit ENTER to continue.
+[0m  Please enter your choice[0;31m
+  1: Prepare VNFDs to both Onboard and Deploy [When VNFDs is not yet onboarded]
+  2: Only Deploy [When VNFDs are already onboarded]
+[0m  [0;33m******************************************************************************************
+* The VNFDs & NS files are generated in 'generated_vnf_ns/' of current working directory *
+******************************************************************************************
+[0m[0;31m************************
+* VOLUME CREATION TIME *
+************************
+[0mWriting epdgdp_159 in /home/cdot/CFW/VAL/NFV/volume_check.cfg
+Volume of CFW Node1 named epdgdp_159 already created. So, skipping creation ...
+[0m
+2026-08-17 10:48:59 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 10:48:59 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 10:48:59 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 10:49:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 10:49:00 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/VAL' && test -d '/home/cdot/CFW/VAL'[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/VAL' on CLOUD_CLI.[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 10:49:02 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 10:49:02 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 10:49:02 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/VAL/NFV'...[0m
+2026-08-17 10:49:02 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 10:49:47 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 10:49:47 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 10:49:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/attach_volumes_template.sh'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/configure_cfw.sh'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/nsd_template.yaml'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/helper.sh'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/os_hardening_audit_rules'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/vol_creation_template.sh'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 10:49:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/replacevars.sh'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/ns_param_template.yaml'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/auto_config.py'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/volumeservice'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/cfg_validation.py'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/interface_vf.xml'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 10:49:50 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 10:49:50 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/VAL/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 10:49:50 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 10:49:50 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 10:49:50 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 10:49:50 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 10:49:50 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 10:49:50 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^62bde69dd46ab796c045871f8d0ec954\s+'[0m
+2026-08-17 10:49:50 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 10:49:50 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 10:49:50 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL' --disk-format qcow2 --file '/home/cdot/CFW/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 10:49:58 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: 'e6057c7a-b1b9-4336-afce-2cbce750d4d4'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 10:50:58 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show 'e6057c7a-b1b9-4336-afce-2cbce750d4d4'[0m
+2026-08-17 10:51:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 10:51:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL' (ID: e6057c7a-b1b9-4336-afce-2cbce750d4d4) is active.[0m
+2026-08-17 10:51:01 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 10:51:01 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/VAL/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 10:51:07 - [INFO] - [test_08_run_replacevars_cloud] [92m✔ SUCCESS: Step 08: replacevars.sh executed successfully and created new volume.[0m
+2026-08-17 10:51:07 - [INFO] - [test_09_run_clean_teosm] [96mExecuting Step 09: Run clean.sh on TEOSM_CLI...[0m
+2026-08-17 10:51:07 - [INFO] - [test_09_run_clean_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./clean.sh && ./clean.sh[0m
+2026-08-17 10:51:07 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '.+'[0m
+2026-08-17 10:51:07 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: Step 09: clean.sh executed successfully on TEOSM_CLI.[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mExecuting Step 10: Dynamically edit creds.cfg on TEOSM_CLI...[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && cp '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg' '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg.bak'[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mUpdated creds.cfg: Tosca_template_path -> '/home/cdot/CFW/VAL/NFV/generated_vnf_ns', node key 'epdg_dp_node11' -> 'epdg_dp_node11'[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '"epdg_dp_node11"' creds.cfg[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '\"epdg_dp_node11\"'[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '/home/cdot/CFW/VAL/NFV/generated_vnf_ns' creds.cfg[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '/home/cdot/CFW/VAL/NFV/generated_vnf_ns'[0m
+2026-08-17 10:51:07 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: Step 10: Successfully updated node key and Tosca_template_path in creds.cfg on TEOSM_CLI.[0m
+2026-08-17 10:51:07 - [INFO] - [test_11_run_venv_teosm] [96mExecuting Step 11: Run venv.sh on TEOSM_CLI...[0m
+2026-08-17 10:51:07 - [INFO] - [test_11_run_venv_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./venv.sh && ./venv.sh 'epdg_dp_node11'[0m
+2026-08-17 10:51:21 - [INFO] - [test_11_run_venv_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '.*_vnf\.tar\.gz\s+Uploaded\s+successfully[\s\S]*.*_nsd\.tar\.gz\s+Uploaded\s+successfully'[0m
+2026-08-17 10:51:21 - [INFO] - [test_11_run_venv_teosm] [92m✔ SUCCESS: Step 11: venv.sh executed successfully and uploaded both VNFD and NSD packages to OSM.[0m
+2026-08-17 10:51:21 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to TEOSM_CLI[0m
+2026-08-17 10:51:21 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to CLOUD_CLI[0m
+2026-08-17 11:00:59 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 11:00:59 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 11:00:59 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 11:01:00 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 11:01:00 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/EPDGDP/VAL'[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/EPDGDP/VAL' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/EPDGDP/VAL' && test -d '/home/cdot/CFW/EPDGDP/VAL'[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/EPDGDP/VAL' on CLOUD_CLI.[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 11:01:01 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 11:01:01 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 11:01:01 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/EPDGDP/VAL/NFV'...[0m
+2026-08-17 11:01:01 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 11:01:46 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 11:01:46 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 11:01:47 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/attach_volumes_template.sh'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e2b5c60cc9a1ba5e3012fde5bbca7054\s+'[0m
+2026-08-17 11:01:48 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/configure_cfw.sh'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/nsd_template.yaml'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/helper.sh'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/os_hardening_audit_rules'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/vol_creation_template.sh'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/replacevars.sh'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/ns_param_template.yaml'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/auto_config.py'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/volumeservice'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/cfg_validation.py'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/interface_vf.xml'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 11:01:49 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 11:01:49 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 11:01:49 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 11:01:49 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 11:01:49 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 11:01:49 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 11:01:49 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 11:01:49 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^e2b5c60cc9a1ba5e3012fde5bbca7054\s+'[0m
+2026-08-17 11:01:49 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 11:01:49 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 11:01:49 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL2' --disk-format qcow2 --file '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 11:01:57 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: '882264e5-e3fc-4688-baa0-8c8dadde5930'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 11:02:57 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show '882264e5-e3fc-4688-baa0-8c8dadde5930'[0m
+2026-08-17 11:03:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 11:03:01 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL2' (ID: 882264e5-e3fc-4688-baa0-8c8dadde5930) is active.[0m
+2026-08-17 11:03:01 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 11:03:01 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/EPDGDP/VAL/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 11:03:02 - [ERROR] - [test_08_run_replacevars_cloud] [91m✖ ERROR: replacevars.sh execution failed with exit code 1!
+Output:
+[0;33m********************
+* ./replacevars.sh *
+********************
+[0m
+Checking configuration file
+Node is EPDGDP, running config validation for EPDGDP
+Please enter mandatory section "ipdr"
+Please enter mandatory section "hamon_reporter"
+Configuration file is not OK, Please check the configuration and again run this command.
+[0m
+2026-08-17 11:14:55 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 11:14:55 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 11:14:55 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 11:14:56 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 11:14:56 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/EPDGDP/VAL'[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: CLOUD_NFV_FOLDER '/home/cdot/CFW/EPDGDP/VAL' verified on CLOUD_CLI.[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 11:14:57 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 11:14:57 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 11:14:57 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/EPDGDP/VAL/NFV'...[0m
+2026-08-17 11:14:57 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 11:15:43 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 11:15:43 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 11:15:43 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/attach_volumes_template.sh'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^ed8549fbcc3c37237e3c2243b8a392ef\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/configure_cfw.sh'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/nsd_template.yaml'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/helper.sh'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/os_hardening_audit_rules'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/vol_creation_template.sh'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/replacevars.sh'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/ns_param_template.yaml'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/auto_config.py'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/volumeservice'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/cfg_validation.py'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/interface_vf.xml'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 11:15:45 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 11:15:45 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 11:15:45 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 11:15:45 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 11:15:45 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 11:15:45 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/EPDGDP/VAL/NFV/wigw_config.cfg'[0m
+2026-08-17 11:15:45 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 11:15:45 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^ed8549fbcc3c37237e3c2243b8a392ef\s+'[0m
+2026-08-17 11:15:45 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 11:15:45 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 11:15:45 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL2' --disk-format qcow2 --file '/home/cdot/CFW/EPDGDP/VAL/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 11:15:54 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: '56c448af-a93f-4cfb-94d2-03744264ebed'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 11:16:54 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show '56c448af-a93f-4cfb-94d2-03744264ebed'[0m
+2026-08-17 11:16:56 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 11:16:56 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL2' (ID: 56c448af-a93f-4cfb-94d2-03744264ebed) is active.[0m
+2026-08-17 11:16:56 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 11:16:56 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/EPDGDP/VAL/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 11:17:04 - [INFO] - [test_08_run_replacevars_cloud] [92m✔ SUCCESS: Step 08: replacevars.sh executed successfully and created new volume.[0m
+2026-08-17 11:17:04 - [INFO] - [test_09_run_clean_teosm] [96mExecuting Step 09: Run clean.sh on TEOSM_CLI...[0m
+2026-08-17 11:17:04 - [INFO] - [test_09_run_clean_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./clean.sh && ./clean.sh[0m
+2026-08-17 11:17:04 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '.+'[0m
+2026-08-17 11:17:04 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: Step 09: clean.sh executed successfully on TEOSM_CLI.[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mExecuting Step 10: Dynamically edit creds.cfg on TEOSM_CLI...[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && cp '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg' '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg.bak'[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mUpdated creds.cfg: Tosca_template_path -> '/home/cdot/CFW/EPDGDP/VAL/NFV/generated_vnf_ns', node key 'epdg_dp_node11' -> 'epdg_dp_node12'[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '"epdg_dp_node12"' creds.cfg[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '\"epdg_dp_node12\"'[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '/home/cdot/CFW/EPDGDP/VAL/NFV/generated_vnf_ns' creds.cfg[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '/home/cdot/CFW/EPDGDP/VAL/NFV/generated_vnf_ns'[0m
+2026-08-17 11:17:04 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: Step 10: Successfully updated node key and Tosca_template_path in creds.cfg on TEOSM_CLI.[0m
+2026-08-17 11:17:04 - [INFO] - [test_11_run_venv_teosm] [96mExecuting Step 11: Run venv.sh on TEOSM_CLI...[0m
+2026-08-17 11:17:04 - [INFO] - [test_11_run_venv_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./venv.sh && ./venv.sh 'epdg_dp_node12'[0m
+2026-08-17 11:17:10 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: [TEOSM_CLI] Regex pattern '.*_vnf\.tar\.gz\s+Uploaded\s+successfully[\s\S]*.*_nsd\.tar\.gz\s+Uploaded\s+successfully' failed to match output!
+--- Output Start ---
+
+Checking if virtualenv package present in system
+Already virtualenv installed. Using the same version
+
+Step -2 : Create the virtual environment
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python3
+Also creating executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 703, in main
+    create_environment(home_dir,
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 923, in create_environment
+    py_executable = os.path.abspath(install_python(
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1419, in install_python
+    fix_local_scheme(home_dir, symlink)
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1502, in fix_local_scheme
+    if sysconfig._get_default_scheme() == 'posix_local':
+AttributeError: module 'sysconfig' has no attribute '_get_default_scheme'. Did you mean: 'get_default_scheme'?
+
+Step -3:  Activating the virtual environment
+./venv.sh: line 15: virtenv/bin/activate: No such file or directory
+
+Step -4: Install the requirements
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: ../packages/
+Requirement already satisfied: bcrypt==3.2.0 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 1)) (3.2.0)
+Requirement already satisfied: cffi==1.15.1 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: configparser==5.0.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (5.0.2)
+Requirement already satisfied: cryptography==3.4.8 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 4)) (3.4.8)
+Requirement already satisfied: paramiko==2.7.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 5)) (2.7.2)
+Requirement already satisfied: pycparser==2.21 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 7)) (2.21)
+Requirement already satisfied: PyNaCl==1.5.0 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 8)) (1.5.0)
+Requirement already satisfied: ruamel.yaml==0.17.4 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 9)) (0.17.4)
+Requirement already satisfied: ruamel.yaml.clib==0.2.7 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 10)) (0.2.7)
+Requirement already satisfied: six==1.16.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 11)) (1.16.0)
+Requirement already satisfied: requests==2.31.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 12)) (2.31.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.4)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.2.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2023.5.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2.0.3)
+
+Step -5: Removing the trailing spaces from cfg file
+
+Step -6: Run the code
+epdgdp
+{'epdg_dp_node12': 'VAL_node1.yaml'}
+{'epdg_dp_node12': 'VAL_node1.yaml'}
+##  Populating the epdg_dp.json file from input cfg  ##
+
+Checking if vnfd is present
+Fetched the authorization token
+Connecting to the server to fetch template file details
+
+....Connected successfully
+
+Writing the cloud init data into template file 
+
+Template file changed for /home/cdot/CFW/EPDGDP/VAL/NFV/generated_vnf_ns/VAL_node1.yaml
+Traceback (most recent call last):
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/code.py", line 155, in <module>
+    The base implementation writes to sys.stderr; a subclass may
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/code.py", line 75, in main
+    return False
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/template_formation.py", line 358, in host_name_formation
+KeyError: 'CFW_NAME_NODE2'
+
+Step -7: Deactivate the venv
+./venv.sh: line 31: deactivate: command not found
+
+Step -8: Removing the virtenv directory
+
+--- Output End ---[0m
+2026-08-17 11:17:10 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: Step 11 FAILED: venv.sh execution failed or package upload confirmations missing.[0m
+2026-08-17 11:17:10 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to TEOSM_CLI[0m
+2026-08-17 11:17:10 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to CLOUD_CLI[0m
+2026-08-17 11:24:12 - [INFO] - [test_01_parse_variables] [96mExecuting Step 01: Parse variables.txt configuration...[0m
+2026-08-17 11:24:12 - [INFO] - [test_01_parse_variables] [92m✔ SUCCESS: Step 01: variables.txt successfully parsed and validated.[0m
+2026-08-17 11:24:12 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to CLOUD_CLI (cdot@172.23.1.50:22)...[0m
+2026-08-17 11:24:13 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to CLOUD_CLI[0m
+2026-08-17 11:24:13 - [INFO] - [test_02_verify_and_prepare_directories] [96mConnecting to TEOSM_CLI (bsnladmin@172.23.9.10:22)...[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Connected to TEOSM_CLI[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [96mExecuting Step 02: Verify and prepare remote directories...[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): test -d '/home/cdot/CFW/VAL1'[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [96mCLOUD_NFV_FOLDER '/home/cdot/CFW/VAL1' missing on CLOUD_CLI. Executing mkdir command...[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [96m[CLOUD_CLI] Executing (timeout=600s): mkdir -p '/home/cdot/CFW/VAL1' && test -d '/home/cdot/CFW/VAL1'[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^'[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Created CLOUD_NFV_FOLDER '/home/cdot/CFW/VAL1' on CLOUD_CLI.[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [96m[TEOSM_CLI] Executing (timeout=600s): test -d '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x'[0m
+2026-08-17 11:24:14 - [INFO] - [test_02_verify_and_prepare_directories] [92m✔ SUCCESS: Verified TEOSM_CLI_OPTI_FOLDER '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' exists on TEOSM_CLI.[0m
+2026-08-17 11:24:14 - [INFO] - [test_03_copy_stuffs_to_cloud] [96mExecuting Step 03: Upload NFV folder and QCOW2 image to CLOUD_CLI...[0m
+2026-08-17 11:24:14 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading directory '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/NFV' -> '/home/cdot/CFW/VAL1/NFV'...[0m
+2026-08-17 11:24:14 - [INFO] - [test_03_copy_stuffs_to_cloud] [96m[CLOUD_CLI] SFTP Uploading image '/home/bikash/workera/personal_git/cloud-automation/automation/launch_stuffs/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' -> '/home/cdot/CFW/VAL1/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'...[0m
+2026-08-17 11:25:00 - [INFO] - [test_03_copy_stuffs_to_cloud] [92m✔ SUCCESS: Step 03: Copied NFV folder and QCOW2 file to CLOUD_CLI successfully.[0m
+2026-08-17 11:25:00 - [INFO] - [test_04_verify_cloud_md5] [96mExecuting Step 04: Verify MD5 checksums on CLOUD_CLI...[0m
+2026-08-17 11:25:00 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/EPDG-2024_20260812T1051-amd64.hybrid.qcow2'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^db4d36467f5ad48ef4ac98f0d957f208\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/attach_volumes_template.sh'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^00bcce14045b8e0c2ce6617e455743a2\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/wigw_config.cfg'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^947fb837a6dd252cd3dc32f9c9a88436\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/configure_cfw.sh'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d05154171ffd67f2203556d0235cc62\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/nsd_template.yaml'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^6d0842c1a8b9e015b6145615248841ab\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/cfw_node1_template.yaml'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4b2a6c4a17aa3510b22cbb45150e8f31\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/helper.sh'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4d4ee349f701e1deb47866df7eb58212\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/os_hardening_audit_rules'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^e054ca1d906975e424d06c0344e6d6b6\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/vol_creation_template.sh'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^063e025e5b779ee64351d36e1c1004ee\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/replacevars.sh'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^87216dfacbed94b971a4ec8b64a5884b\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/ns_param_template.yaml'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^0dc73309218370945e3cc3540737443b\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/auto_config.py'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^9fc92a14bd4997287cf9dc0bac5de637\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/volumeservice'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^f4fd54a7f0ac43bcea0d4d051bfe678c\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/cfg_validation.py'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^c1d090aa55e4a566390e46e52709ed8c\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/interface_vf.xml'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '^4f9f93ed7045aad828d82a9f1aa59a82\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_04_verify_cloud_md5] [92m✔ SUCCESS: Step 04: All MD5 checksums matched on CLOUD_CLI.[0m
+2026-08-17 11:25:02 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mExecuting Step 05: Copy configuration file from CLOUD_CLI to TEOSM_CLI...[0m
+2026-08-17 11:25:02 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mDownloading '/home/cdot/CFW/VAL1/NFV/wigw_config.cfg' from CLOUD_CLI via SFTP...[0m
+2026-08-17 11:25:02 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [96mUploading 'wigw_config.cfg' to TEOSM_CLI path '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg' via SFTP...[0m
+2026-08-17 11:25:02 - [INFO] - [test_05_copy_cfg_cloud_to_teosm] [92m✔ SUCCESS: Step 05: Copied wigw_config.cfg from CLOUD_CLI to TEOSM_CLI successfully.[0m
+2026-08-17 11:25:02 - [INFO] - [test_06_verify_teosm_cfg_md5] [96mExecuting Step 06: Verify wigw_config.cfg MD5 checksum on TEOSM_CLI...[0m
+2026-08-17 11:25:02 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[CLOUD_CLI] Executing (timeout=600s): md5sum '/home/cdot/CFW/VAL1/NFV/wigw_config.cfg'[0m
+2026-08-17 11:25:02 - [INFO] - [test_06_verify_teosm_cfg_md5] [96m[TEOSM_CLI] Executing (timeout=600s): md5sum '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/wigw_config.cfg'[0m
+2026-08-17 11:25:02 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '^947fb837a6dd252cd3dc32f9c9a88436\s+'[0m
+2026-08-17 11:25:02 - [INFO] - [test_06_verify_teosm_cfg_md5] [92m✔ SUCCESS: Step 06: CFG file MD5 checksum verified on TEOSM_CLI.[0m
+2026-08-17 11:25:02 - [INFO] - [test_07_create_openstack_image] [96mExecuting Step 07: Create OpenStack image on CLOUD_CLI...[0m
+2026-08-17 11:25:02 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=900s): openstack image create 'EPDGDP-3.1.0_VAL2' --disk-format qcow2 --file '/home/cdot/CFW/VAL1/EPDG-2024_20260812T1051-amd64.hybrid.qcow2' --public[0m
+2026-08-17 11:25:10 - [INFO] - [test_07_create_openstack_image] [96mOpenStack Image created with ID: '759d1eec-5572-4d39-ac16-8f1dae400192'. Waiting 60 seconds (1 minute) for status check...[0m
+2026-08-17 11:26:10 - [INFO] - [test_07_create_openstack_image] [96m[CLOUD_CLI] Executing (timeout=600s): openstack image show '759d1eec-5572-4d39-ac16-8f1dae400192'[0m
+2026-08-17 11:26:12 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: [CLOUD_CLI] Command succeeded & matched regex pattern: '\|\s*status\s*\|\s*active\s*\|'[0m
+2026-08-17 11:26:12 - [INFO] - [test_07_create_openstack_image] [92m✔ SUCCESS: Step 07: OpenStack Image 'EPDGDP-3.1.0_VAL2' (ID: 759d1eec-5572-4d39-ac16-8f1dae400192) is active.[0m
+2026-08-17 11:26:12 - [INFO] - [test_08_run_replacevars_cloud] [96mExecuting Step 08: Run replacevars.sh on CLOUD_CLI...[0m
+2026-08-17 11:26:12 - [INFO] - [test_08_run_replacevars_cloud] [96m[CLOUD_CLI] Executing (timeout=600s): cd '/home/cdot/CFW/VAL1/NFV' && chmod +x ./replacevars.sh && echo -e "\n1" | ./replacevars.sh[0m
+2026-08-17 11:26:26 - [INFO] - [test_08_run_replacevars_cloud] [92m✔ SUCCESS: Step 08: replacevars.sh executed successfully and created new volume.[0m
+2026-08-17 11:26:26 - [INFO] - [test_09_run_clean_teosm] [96mExecuting Step 09: Run clean.sh on TEOSM_CLI...[0m
+2026-08-17 11:26:26 - [INFO] - [test_09_run_clean_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./clean.sh && ./clean.sh[0m
+2026-08-17 11:26:26 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '.+'[0m
+2026-08-17 11:26:26 - [INFO] - [test_09_run_clean_teosm] [92m✔ SUCCESS: Step 09: clean.sh executed successfully on TEOSM_CLI.[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mExecuting Step 10: Dynamically edit creds.cfg on TEOSM_CLI...[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && cp '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg' '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/creds.cfg.bak'[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [96mUpdated creds.cfg: Tosca_template_path -> '/home/cdot/CFW/VAL1/NFV/generated_vnf_ns', node key 'epdg_dp_node12' -> 'epdg_dp_node12'[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '"epdg_dp_node12"' creds.cfg[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '\"epdg_dp_node12\"'[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && grep -i '/home/cdot/CFW/VAL1/NFV/generated_vnf_ns' creds.cfg[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: [TEOSM_CLI] Command succeeded & matched regex pattern: '/home/cdot/CFW/VAL1/NFV/generated_vnf_ns'[0m
+2026-08-17 11:26:26 - [INFO] - [test_10_edit_creds_cfg_teosm] [92m✔ SUCCESS: Step 10: Successfully updated node key and Tosca_template_path in creds.cfg on TEOSM_CLI.[0m
+2026-08-17 11:26:26 - [INFO] - [test_11_run_venv_teosm] [96mExecuting Step 11: Run venv.sh on TEOSM_CLI...[0m
+2026-08-17 11:26:26 - [INFO] - [test_11_run_venv_teosm] [96m[TEOSM_CLI] Executing (timeout=600s): cd '/home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x' && chmod +x ./venv.sh && ./venv.sh 'epdg_dp_node12'[0m
+2026-08-17 11:26:30 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: [TEOSM_CLI] Regex pattern '.*_vnf\.tar\.gz\s+Uploaded\s+successfully[\s\S]*.*_nsd\.tar\.gz\s+Uploaded\s+successfully' failed to match output!
+--- Output Start ---
+
+Checking if virtualenv package present in system
+Already virtualenv installed. Using the same version
+
+Step -2 : Create the virtual environment
+Already using interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python3
+Also creating executable in /home/bsnladmin/optimized_pycscript_EPDGDP_patch6_teosm8x/EPDGDP_3.1.0_MultipleInterface_Patch6_teosm8x/virtenv/bin/python
+Traceback (most recent call last):
+  File "/usr/local/bin/virtualenv", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 703, in main
+    create_environment(home_dir,
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 923, in create_environment
+    py_executable = os.path.abspath(install_python(
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1419, in install_python
+    fix_local_scheme(home_dir, symlink)
+  File "/usr/local/lib/python3.10/dist-packages/virtualenv.py", line 1502, in fix_local_scheme
+    if sysconfig._get_default_scheme() == 'posix_local':
+AttributeError: module 'sysconfig' has no attribute '_get_default_scheme'. Did you mean: 'get_default_scheme'?
+
+Step -3:  Activating the virtual environment
+./venv.sh: line 15: virtenv/bin/activate: No such file or directory
+
+Step -4: Install the requirements
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: ../packages/
+Requirement already satisfied: bcrypt==3.2.0 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 1)) (3.2.0)
+Requirement already satisfied: cffi==1.15.1 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: configparser==5.0.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (5.0.2)
+Requirement already satisfied: cryptography==3.4.8 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 4)) (3.4.8)
+Requirement already satisfied: paramiko==2.7.2 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 5)) (2.7.2)
+Requirement already satisfied: pycparser==2.21 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 7)) (2.21)
+Requirement already satisfied: PyNaCl==1.5.0 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 8)) (1.5.0)
+Requirement already satisfied: ruamel.yaml==0.17.4 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 9)) (0.17.4)
+Requirement already satisfied: ruamel.yaml.clib==0.2.7 in /home/bsnladmin/.local/lib/python3.10/site-packages (from -r requirements.txt (line 10)) (0.2.7)
+Requirement already satisfied: six==1.16.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 11)) (1.16.0)
+Requirement already satisfied: requests==2.31.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 12)) (2.31.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.4)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2023.5.7)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (3.2.0)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests==2.31.0->-r requirements.txt (line 12)) (2.0.3)
+
+Step -5: Removing the trailing spaces from cfg file
+
+Step -6: Run the code
+epdgdp
+{'epdg_dp_node12': 'VAL1_node1.yaml'}
+{'epdg_dp_node12': 'VAL1_node1.yaml'}
+##  Populating the epdg_dp.json file from input cfg  ##
+
+Checking if vnfd is present
+Fetched the authorization token
+Connecting to the server to fetch template file details
+
+....Connected successfully
+
+Writing the cloud init data into template file 
+
+Template file changed for /home/cdot/CFW/VAL1/NFV/generated_vnf_ns/VAL1_node1.yaml
+Traceback (most recent call last):
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/code.py", line 155, in <module>
+    The base implementation writes to sys.stderr; a subclass may
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/code.py", line 75, in main
+    return False
+  File "/home/bsnladmin/sivaji/optimized_pycscripts_teosm8x/EPDGDP_1.4.0_MultipleInterface_Patch5_teosm8x/template_formation.py", line 358, in host_name_formation
+KeyError: 'CFW_NAME_NODE2'
+
+Step -7: Deactivate the venv
+./venv.sh: line 31: deactivate: command not found
+
+Step -8: Removing the virtenv directory
+
+--- Output End ---[0m
+2026-08-17 11:26:30 - [ERROR] - [test_11_run_venv_teosm] [91m✖ ERROR: Step 11 FAILED: venv.sh execution failed or package upload confirmations missing.[0m
+2026-08-17 11:26:30 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to TEOSM_CLI[0m
+2026-08-17 11:26:30 - [INFO] - [test_11_run_venv_teosm] [96mClosed connection to CLOUD_CLI[0m

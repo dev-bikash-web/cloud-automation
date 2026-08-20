@@ -1,0 +1,13 @@
+# Ignore log files, caches, and large binary packages
+*.log
+*.pyc
+*.pyo
+__pycache__/
+.pytest_cache/
+
+# Ignore launch_stuffs binary packages
+launch_stuffs/*.tar.gz
+launch_stuffs/*.qcow2
+launch_stuffs/*.zip
+launch_stuffs/*.iso
+launch_stuffs/*.img
