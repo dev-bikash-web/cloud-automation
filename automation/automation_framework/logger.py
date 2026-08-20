@@ -37,15 +37,28 @@ class FileLogFormatter(logging.Formatter):
         return formatter.format(record)
 
 def get_test_file_log_name(default_name: str = "execution.log") -> str:
-    """Helper to detect active test file stem (e.g., 'test_node_launch_execution.log')."""
+    """Helper to detect active test file stem and component directory (e.g., 'logs/teosm_node_launch/test_node_launch_execution.log')."""
     current = os.environ.get("PYTEST_CURRENT_TEST", "")
     if current:
         file_part = current.split("::")[0]
+        rel_dir = os.path.dirname(file_part)
         basename = os.path.basename(file_part)
         stem = os.path.splitext(basename)[0]
+
+        sub_path = ""
+        if "tests/" in rel_dir:
+            sub_path = rel_dir.split("tests/", 1)[1].strip("/")
+        elif rel_dir.startswith("tests"):
+            sub_path = rel_dir[len("tests"):].strip("/")
+
+        logs_dir = os.path.join("logs", sub_path) if sub_path else "logs"
+        os.makedirs(logs_dir, exist_ok=True)
+
         if stem:
-            return f"{stem}_execution.log"
-    return default_name
+            return os.path.join(logs_dir, f"{stem}_execution.log")
+
+    os.makedirs("logs", exist_ok=True)
+    return os.path.join("logs", default_name)
 
 class DynamicFileHandler(logging.FileHandler):
     """FileHandler that lazily routes logs to <test_file>_execution.log based on active test suite."""

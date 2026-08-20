@@ -1,5 +1,6 @@
-# Ignore log files, caches, and large binary packages
+# Ignore log files, logs directory, caches, and large binary packages
 *.log
+logs/
 *.pyc
 *.pyo
 __pycache__/

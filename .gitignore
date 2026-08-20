@@ -6,8 +6,10 @@
 *.img
 *.bin
 
-# Ignore log files
+# Ignore log files and logs directory
 *.log
+logs/
+automation/logs/
 automation/*.log
 
 # Ignore Python bytecode and pytest cache
