@@ -24,7 +24,8 @@ class SSHNode:
         jump_hostname: Optional[str] = None,
         jump_username: Optional[str] = None,
         jump_password: Optional[str] = None,
-        jump_port: int = 22
+        jump_port: int = 22,
+        jump_chain: Optional[list] = None
     ):
         self.hostname = hostname
         self.username = username
@@ -36,10 +37,13 @@ class SSHNode:
         self.jump_username = jump_username
         self.jump_password = jump_password
         self.jump_port = jump_port
+        self.jump_chain = jump_chain or []
         
         self.client: Optional[paramiko.SSHClient] = None
         self.jump_client: Optional[paramiko.SSHClient] = None
         self.jump_channel: Optional[paramiko.Channel] = None
+        self.jump_clients: list = []
+        self.jump_channels: list = []
         self.sftp: Optional[paramiko.SFTPClient] = None
 
     @staticmethod
@@ -83,7 +87,41 @@ class SSHNode:
 
     def _connect_sync(self, timeout: int):
         sock_channel = None
-        if self.jump_hostname and self.jump_username:
+        if self.jump_chain:
+            curr_sock = None
+            for i, jump in enumerate(self.jump_chain):
+                j_host = jump.get("hostname")
+                j_user = jump.get("username")
+                j_pass = jump.get("password")
+                j_port = jump.get("port", 22)
+                
+                log_info(f"Connecting to Jump Server Hop {i+1} ({j_user}@{j_host}:{j_port})...")
+                j_client = paramiko.SSHClient()
+                j_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                j_client.connect(
+                    hostname=j_host,
+                    port=j_port,
+                    username=j_user,
+                    password=j_pass,
+                    sock=curr_sock,
+                    timeout=timeout,
+                    banner_timeout=60
+                )
+                self.jump_clients.append(j_client)
+                
+                next_dest = (
+                    (self.jump_chain[i+1]["hostname"], self.jump_chain[i+1].get("port", 22))
+                    if i + 1 < len(self.jump_chain)
+                    else (self.hostname, self.port)
+                )
+                
+                log_info(f"Opening SSH proxy channel from Hop {i+1} ({j_host}) to Next Hop ({next_dest[0]}:{next_dest[1]})...")
+                j_transport = j_client.get_transport()
+                curr_sock = j_transport.open_channel("direct-tcpip", next_dest, (j_host, j_port))
+                self.jump_channels.append(curr_sock)
+                
+            sock_channel = curr_sock
+        elif self.jump_hostname and self.jump_username:
             log_info(f"Connecting to Jump Server ({self.jump_username}@{self.jump_hostname}:{self.jump_port})...")
             self.jump_client = paramiko.SSHClient()
             self.jump_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -135,6 +173,16 @@ class SSHNode:
         if self.client:
             try:
                 self.client.close()
+            except Exception:
+                pass
+        for chan in reversed(self.jump_channels):
+            try:
+                chan.close()
+            except Exception:
+                pass
+        for cli in reversed(self.jump_clients):
+            try:
+                cli.close()
             except Exception:
                 pass
         if self.jump_channel:

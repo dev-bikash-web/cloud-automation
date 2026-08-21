@@ -101,6 +101,64 @@ def connect_ssh() -> Callable[..., SSHNode]:
     return _connect
 
 @pytest.fixture(scope="session")
+def connect_multi_jump_ssh() -> Callable[..., SSHNode]:
+    """
+    Dedicated abstract factory fixture for multi-level (chained N-hop) Jump Server SSH connections.
+
+    Accepts:
+      connection_str: "target_user@target_host:port"
+      password: "target_password"
+      jump_chain: List of connection strings OR comma-separated string (e.g. "u1@h1:22, u2@h2:22")
+      jump_passwords: List of passwords OR comma-separated string (e.g. "p1, p2")
+      name: Optional display name for node (default "MultiJumpNode")
+      timeout: Optional global timeout in seconds (default 600)
+    """
+    def _connect(
+        connection_str: str,
+        password: str,
+        jump_chain: Any,
+        jump_passwords: Any,
+        name: str = "MultiJumpNode",
+        timeout: int = 600
+    ) -> SSHNode:
+        target_user, target_host, target_port = ConfigParser.get_host_credentials(connection_str)
+
+        if isinstance(jump_chain, str):
+            chain_list = [c.strip() for c in jump_chain.split(",") if c.strip()]
+        else:
+            chain_list = list(jump_chain)
+
+        if isinstance(jump_passwords, str):
+            pass_list = [p.strip() for p in jump_passwords.split(",") if p.strip()]
+        else:
+            pass_list = list(jump_passwords)
+
+        parsed_chain = []
+        for i, conn_str in enumerate(chain_list):
+            j_user, j_host, j_port = ConfigParser.get_host_credentials(conn_str, 22)
+            j_pass = pass_list[i] if i < len(pass_list) else ""
+            parsed_chain.append({
+                "hostname": j_host,
+                "username": j_user,
+                "password": j_pass,
+                "port": j_port
+            })
+
+        node = SSHNode(
+            hostname=target_host,
+            username=target_user,
+            password=password,
+            port=target_port,
+            name=name,
+            global_timeout=timeout,
+            jump_chain=parsed_chain
+        )
+        loop = get_or_create_event_loop()
+        loop.run_until_complete(node.connect())
+        return node
+    return _connect
+
+@pytest.fixture(scope="session")
 def close_ssh() -> Callable[[SSHNode], None]:
     """
     Generic wrapper fixture to close any SSHNode connection cleanly on demand.
