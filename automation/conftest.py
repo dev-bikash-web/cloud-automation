@@ -58,18 +58,42 @@ def parse_credentials() -> Callable[[str, int], Tuple[Optional[str], Optional[st
 @pytest.fixture(scope="session")
 def connect_ssh() -> Callable[..., SSHNode]:
     """
-    Generic factory wrapper fixture to connect to ANY remote SSH host on demand.
-    Accepts: (connection_str, password, name="Node", timeout=600) -> SSHNode
+    Unified abstract factory fixture to connect to ANY remote SSH host on demand.
+    Supports both direct SSH connections and Jump Server (proxy host) connections.
+
+    Accepts:
+      connection_str: "user@host:port" or "user@host"
+      password: "target_password"
+      jump_connection_str: Optional "jump_user@jump_host:port"
+      jump_password: Optional "jump_password"
+      name: Optional display name for node (default "Node")
+      timeout: Optional global timeout in seconds (default 600)
     """
-    def _connect(connection_str: str, password: str, name: str = "Node", timeout: int = 600) -> SSHNode:
+    def _connect(
+        connection_str: str,
+        password: str,
+        jump_connection_str: Optional[str] = None,
+        jump_password: Optional[str] = None,
+        name: str = "Node",
+        timeout: int = 600
+    ) -> SSHNode:
         user, host, port = ConfigParser.get_host_credentials(connection_str)
+
+        jump_user, jump_host, jump_port = None, None, 22
+        if jump_connection_str:
+            jump_user, jump_host, jump_port = ConfigParser.get_host_credentials(jump_connection_str, 22)
+
         node = SSHNode(
             hostname=host,
             username=user,
             password=password,
             port=port,
             name=name,
-            global_timeout=timeout
+            global_timeout=timeout,
+            jump_hostname=jump_host,
+            jump_username=jump_user,
+            jump_password=jump_password,
+            jump_port=jump_port
         )
         loop = get_or_create_event_loop()
         loop.run_until_complete(node.connect())

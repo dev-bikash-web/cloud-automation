@@ -20,7 +20,11 @@ class SSHNode:
         password: Optional[str] = None,
         port: int = 22,
         name: str = "Node",
-        global_timeout: int = DEFAULT_GLOBAL_TIMEOUT
+        global_timeout: int = DEFAULT_GLOBAL_TIMEOUT,
+        jump_hostname: Optional[str] = None,
+        jump_username: Optional[str] = None,
+        jump_password: Optional[str] = None,
+        jump_port: int = 22
     ):
         self.hostname = hostname
         self.username = username
@@ -28,7 +32,14 @@ class SSHNode:
         self.port = port
         self.name = name
         self.global_timeout = global_timeout
+        self.jump_hostname = jump_hostname
+        self.jump_username = jump_username
+        self.jump_password = jump_password
+        self.jump_port = jump_port
+        
         self.client: Optional[paramiko.SSHClient] = None
+        self.jump_client: Optional[paramiko.SSHClient] = None
+        self.jump_channel: Optional[paramiko.Channel] = None
         self.sftp: Optional[paramiko.SFTPClient] = None
 
     @staticmethod
@@ -71,7 +82,30 @@ class SSHNode:
         }
 
     def _connect_sync(self, timeout: int):
-        log_info(f"Connecting to {self.name} ({self.username}@{self.hostname}:{self.port})...")
+        sock_channel = None
+        if self.jump_hostname and self.jump_username:
+            log_info(f"Connecting to Jump Server ({self.jump_username}@{self.jump_hostname}:{self.jump_port})...")
+            self.jump_client = paramiko.SSHClient()
+            self.jump_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            self.jump_client.connect(
+                hostname=self.jump_hostname,
+                port=self.jump_port,
+                username=self.jump_username,
+                password=self.jump_password,
+                timeout=timeout,
+                banner_timeout=60
+            )
+            log_info(f"Opening SSH proxy channel via Jump Server to Target ({self.username}@{self.hostname}:{self.port})...")
+            jump_transport = self.jump_client.get_transport()
+            sock_channel = jump_transport.open_channel(
+                "direct-tcpip",
+                (self.hostname, self.port),
+                (self.jump_hostname, self.jump_port)
+            )
+            self.jump_channel = sock_channel
+        else:
+            log_info(f"Connecting to {self.name} ({self.username}@{self.hostname}:{self.port})...")
+
         self.client = paramiko.SSHClient()
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.client.connect(
@@ -79,6 +113,7 @@ class SSHNode:
             port=self.port,
             username=self.username,
             password=self.password,
+            sock=sock_channel,
             timeout=timeout,
             banner_timeout=60
         )
@@ -100,6 +135,16 @@ class SSHNode:
         if self.client:
             try:
                 self.client.close()
+            except Exception:
+                pass
+        if self.jump_channel:
+            try:
+                self.jump_channel.close()
+            except Exception:
+                pass
+        if self.jump_client:
+            try:
+                self.jump_client.close()
             except Exception:
                 pass
         log_info(f"Closed connection to {self.name}")
